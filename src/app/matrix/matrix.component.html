@@ -1,0 +1,33 @@
+<div class="team-skills-div">
+  <table class="team-skills-tbl">
+    <thead>
+      <tr>
+        <th> Name </th>
+        <th [style.background-color]="skill.isHard?  'teal' : 'deepskyblue'" *ngFor="let skill of skills">
+          <div>{{skill.name}}</div>
+        </th>
+      </tr>
+    <tbody>
+      <tr *ngFor="let worker of team">
+        <td>{{worker.name}}</td>
+        <td *ngFor="let skill of worker.skills">
+          <div>
+            <select [(ngModel)]="skill.levelId" (change)="onSkillChange(skill.skillId)">
+              <option *ngFor="let r of roles" [ngValue]="r.id">{{r.name }}</option>
+            </select>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th> </th>
+        <td *ngFor="let skill of skills">
+          <div *ngFor="let s of skill.sum">
+            {{s.roleName}} : {{s.count}}
+          </div>
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+</div>

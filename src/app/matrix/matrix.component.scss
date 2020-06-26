@@ -1,0 +1,48 @@
+table.team-skills-tbl {border-top:1px solid #ccc;border-left:1px solid #ccc;}
+	table.team-skills-tbl td, table.team-skills-tbl th {border-bottom:1px solid #ccc;border-right:1px solid #ccc;padding:5px;}
+	table.team-skills-tbl th {height:150px;position: relative;}
+	table.team-skills-tbl th div {	-moz-transform: rotate(-90.0deg);
+    -o-transform: rotate(-90.0deg);
+    -webkit-transform: rotate(-90.0deg);
+    -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0.083)";
+    transform: rotate(-90.0deg);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    white-space: nowrap;
+    transform-origin: 0 50%;
+    /* width: 100%; */
+    text-align: center;}
+
+    .team-skills-div
+    {
+        max-height: 500px;
+        width: 98%;
+        overflow:auto;
+    }
+
+    select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        text-indent: 1px;
+        text-overflow: '';
+        border: none;
+    }
+
+   /* table  tr {
+        display:block;
+    }
+    
+    table th,table td{
+        width:65px;//fixed width
+    }
+    
+    
+    table  tbody{
+      display:block;
+      height:250px;
+      overflow-y:scroll;//set tbody to auto
+    }*/
+
+
+   
