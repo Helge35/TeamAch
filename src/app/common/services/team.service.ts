@@ -42,8 +42,14 @@ export class TeamService {
     ]
 
     projects:Project[] =[
-        {id : 1, name:"Fiest", color:'green'},
-        {id : 2, name:"Second", color:'red'},
+        {id : 1, name:"First", color:'green' ,neededRoles:[{roleId:1,roleName:'Junior', count:2}]},
+        {id : 2, name:"Second", color:'red',neededRoles:[{roleId:1,roleName:'Junior', count:2}]},
+        {id : 3, name:"Project 3", color:'yellow',neededRoles:[{roleId:1,roleName:'Junior', count:2}, {roleId:3,roleName:'Senior', count:1}]},
+        {id : 4, name:"Project 4" , color:'aqua',neededRoles:[{roleId:1,roleName:'Junior', count:2}]},
+        {id : 5, name:"Project 5", color:'gray', neededRoles:[]},
+        {id : 6, name:"Project 6", color:'silver', neededRoles:[]},
+        {id : 7, name:"Project 7", color:'gold' ,neededRoles:[]},
+        {id : 8, name:"Project 8", color:'black', neededRoles:[]},
     ]
 
     roles:Role[] =[

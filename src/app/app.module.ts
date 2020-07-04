@@ -12,6 +12,7 @@ import { TeamDetailsComponent } from './team-details/team-details.component';
 import { MenuBarComponent } from './menu-bar/menu-bar.component';
 import { MatrixComponent } from './matrix/matrix.component';
 import { WorkerSkillComponent } from './worker-skill/worker-skill.component';
+import { ProjectsComponent } from './projects/projects.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +20,8 @@ import { WorkerSkillComponent } from './worker-skill/worker-skill.component';
     TeamDetailsComponent,
     MenuBarComponent,
     MatrixComponent,
-    WorkerSkillComponent
+    WorkerSkillComponent,
+    ProjectsComponent
   ],
   imports: [
     BrowserModule,

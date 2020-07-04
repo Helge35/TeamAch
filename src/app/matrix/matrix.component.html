@@ -1,16 +1,15 @@
-<div class="team-skills-div">
+<div class=" team-skills-div">
   <table class="team-skills-tbl">
-    <thead>
-      <tr>
-        <th> Name </th>
-        <th [style.background-color]="skill.isHard?  'teal' : 'deepskyblue'" *ngFor="let skill of skills">
-          <div>{{skill.name}}</div>
-        </th>
-      </tr>
+    <tr>
+      <th class="table-row-header"> Name </th>
+      <th [style.background-color]="skill.isHard?  'teal' : 'deepskyblue'" *ngFor="let skill of skills">
+        <div>{{skill.name}}</div>
+      </th>
+    </tr>
     <tbody>
       <tr *ngFor="let worker of team">
         <td>{{worker.name}}</td>
-        <td *ngFor="let skill of worker.skills">
+        <td *ngFor="let skill of worker.skills" class="table-col">
           <div>
             <select [(ngModel)]="skill.levelId" (change)="onSkillChange(skill.skillId)">
               <option *ngFor="let r of roles" [ngValue]="r.id">{{r.name }}</option>
@@ -30,4 +29,21 @@
       </tr>
     </tfoot>
   </table>
+</div>
+
+<div class=" team-projects-div">
+  <div class="team-skills-div">
+    <table class="team-skills-tbl">
+      <tbody>
+        <tr *ngFor="let project of projectsList">
+          <td class="table-row-header">{{project.name}}</td>
+          <td class="table-col" *ngFor="let skill of skills">
+            <div>
+
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

@@ -21,6 +21,14 @@ table.team-skills-tbl {border-top:1px solid #ccc;border-left:1px solid #ccc;}
         overflow:auto;
     }
 
+    .team-projects-div
+    {
+        max-height: 230px;
+        width: 98%;
+        overflow:auto;
+        margin-top: 50px;
+    }
+
     select {
         -webkit-appearance: none;
         -moz-appearance: none;
@@ -29,20 +37,14 @@ table.team-skills-tbl {border-top:1px solid #ccc;border-left:1px solid #ccc;}
         border: none;
     }
 
-   /* table  tr {
-        display:block;
+    .table-row-header
+    {
+        text-decoration: solid;
+        width: 550px;
     }
-    
-    table th,table td{
-        width:65px;//fixed width
-    }
-    
-    
-    table  tbody{
-      display:block;
-      height:250px;
-      overflow-y:scroll;//set tbody to auto
-    }*/
 
+    .table-col{
+        min-width: 80px;
+    }
 
    

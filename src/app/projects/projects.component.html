@@ -1,0 +1,15 @@
+<div class="card-deck">
+    <div class="floating-card" *ngFor="let project of projectsList" >
+        <div class="card-header" [style.background-color]="project.color">
+            {{project.name}}
+        </div>
+        <div class="card-body row text-center">
+            <div class="col" *ngFor="let role of project.neededRoles">
+                <div class="text-value-xl">{{role.roleName}}</div>
+                <div class="text-uppercase text-muted small">{{role.count}}</div>
+            </div>
+            <div class="vr"></div>
+        </div>
+
+    </div>
+</div>

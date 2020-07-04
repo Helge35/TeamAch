@@ -16,10 +16,10 @@ import { SkillSum } from '../common/models/skillSum';
 })
 export class MatrixComponent implements OnInit {
 
-  team: Member[];
-  projectList: Project[];
-  skills: Skill[];
-  roles: Role[];
+  team: Member[] = [];
+  projectsList: Project[] = [];
+  skills: Skill[] = [];
+  roles: Role[] = [];
 
   setWorkerSkills(): void {
     this.team.forEach(worker => {
@@ -35,8 +35,7 @@ export class MatrixComponent implements OnInit {
           ws.levelId = existedSkill.levelId;
 
           let scillSum = skill.sum.find(x => x.roleId == ws.levelId);
-          scillSum.count = scillSum.count +1;
-
+          scillSum.count = scillSum.count + 1;
         }
         else {
           ws.levelId = 0;
@@ -65,19 +64,19 @@ export class MatrixComponent implements OnInit {
   }
 
   onSkillChange(skillId: number) {
-   let skill= this.skills.find(x=>x.id == skillId);
-   skill.sum.forEach(s => {
-     s.count =0;
-   }); 
+    let skill = this.skills.find(x => x.id == skillId);
+    skill.sum.forEach(s => {
+      s.count = 0;
+    });
 
-   this.team.forEach(worker => {
+    this.team.forEach(worker => {
       let roleId = worker.skills.find(x => x.skillId == skill.id).levelId;
       if (roleId) {
         let scillSum = skill.sum.find(x => x.roleId == roleId);
-        scillSum.count = scillSum.count +1;
+        scillSum.count = scillSum.count + 1;
       }
-  });
-}
+    });
+  }
 
   constructor(private _teamService: TeamService) {
   }
@@ -85,7 +84,7 @@ export class MatrixComponent implements OnInit {
   ngOnInit(): void {
     this.skills = this._teamService.skills;
     this.team = this._teamService.team;
-    this.projectList = this._teamService.projects;
+    this.projectsList = this._teamService.projects;
     this.roles = this._teamService.roles;
     this.setSkillsSummery();
     this.setWorkerSkills();
