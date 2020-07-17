@@ -1,5 +1,6 @@
+import { Role } from './role';
+
 export class SkillSum{
-    roleName : string;
-    roleId: number;
+    role: Role
     count : number;
 }

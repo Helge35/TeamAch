@@ -1,8 +1,11 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { BrowserModule } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 
-import {TeamViewComponent} from './team-view/team-view.component';
-import {TeamDetailsComponent} from './team-details/team-details.component';
+import { TeamViewComponent } from './team-view/team-view.component';
+import { TeamDetailsComponent } from './team-details/team-details.component';
 import { MatrixComponent } from './matrix/matrix.component';
 import { ProjectsComponent } from './projects/projects.component';
 
@@ -17,7 +20,11 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    CommonModule,
+    BrowserModule,
+    HttpClientModule,
+    RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

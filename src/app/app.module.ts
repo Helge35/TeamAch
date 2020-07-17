@@ -13,6 +13,7 @@ import { MenuBarComponent } from './menu-bar/menu-bar.component';
 import { MatrixComponent } from './matrix/matrix.component';
 import { WorkerSkillComponent } from './worker-skill/worker-skill.component';
 import { ProjectsComponent } from './projects/projects.component';
+import { ProjectDetailsComponent } from './projects/project-details/project-details.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +22,8 @@ import { ProjectsComponent } from './projects/projects.component';
     MenuBarComponent,
     MatrixComponent,
     WorkerSkillComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    ProjectDetailsComponent
   ],
   imports: [
     BrowserModule,

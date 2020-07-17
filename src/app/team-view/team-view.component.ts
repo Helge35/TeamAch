@@ -23,8 +23,9 @@ export class TeamViewComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.team  = this._teamService.team;
-    this.messagesList  = this._teamService.messages;
-    this.projectList = this._teamService.projects;
+ 
+    this._teamService.getTeamAll().subscribe(t => this.team = t);
+    this._teamService.getProjects().subscribe(p => this.projectList = p);
+    this._teamService.getMessages().subscribe(r => this.messagesList = r);
   }
 }

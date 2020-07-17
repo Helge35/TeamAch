@@ -1,15 +1,20 @@
-<div class="card-deck">
+
+  <button class="btn btn-primary" (click)="openProjectDetails(0)">Add</button>
+  <div class="card-deck">
     <div class="floating-card" *ngFor="let project of projectsList" >
         <div class="card-header" [style.background-color]="project.color">
             {{project.name}}
         </div>
-        <div class="card-body row text-center">
-            <div class="col" *ngFor="let role of project.neededRoles">
-                <div class="text-value-xl">{{role.roleName}}</div>
-                <div class="text-uppercase text-muted small">{{role.count}}</div>
+        <div class="card-body row text-center card-content">
+            <div class="col" *ngFor="let skill of project.skills">
+                <div class="text-value-xl">{{skill.name}}</div>
+                <div  *ngFor="let skillSum of skill.sum" class="text-uppercase text-muted small">
+                    {{skillSum.role.name}} - {{skillSum.count}} </div>
             </div>
-            <div class="vr"></div>
+            
         </div>
-
+        <div class="card-footer">
+            <button class="btn btn-primary" (click)="openProjectDetails(project.id)">Edit</button>
+        </div>
     </div>
 </div>

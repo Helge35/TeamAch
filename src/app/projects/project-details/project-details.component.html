@@ -1,0 +1,49 @@
+<div class="modal-header">
+  <input id="typeahead-basic" maxlength="20" type="text" class="form-control" placeholder="Project Name"
+    [(ngModel)]="project.name" #name="ngModel" [ngClass]="{ 'is-invalid':  name.invalid }" required>
+  <div class="invalid-feedback" *ngIf="name.invalid">
+    <p *ngIf="name.errors.required">Name is required</p>
+  </div>
+  <button type="button" class="close" aria-label="Close button" aria-describedby="modal-title"
+    (click)="modal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <p><strong>Requaered Skills:</strong></p>
+  <div>
+    <div>
+      <label for="typeahead-basic">Select additional skill:</label>
+      <input id="typeahead-basic" type="text" class="form-control" [(ngModel)]="newSkillName"
+        [ngbTypeahead]="searchNewSkill" />
+
+      <div *ngIf="newSkillSum && newSkillName && newSkillName.length>0">
+        <div>
+          <ul class="list-group list-group-flush">
+            <li *ngFor="let sum of newSkillSum"
+              class="list-group-item d-flex justify-content-between align-items-center">
+              {{sum.role.name}} - <input type="number" min="0" [(ngModel)]="sum.count">
+
+
+            </li>
+          </ul>
+        </div>
+      </div>
+      <button type="button" aria-describedby="modal-title" (click)="addNewSkill()">Add</button>
+    </div>
+  </div>
+  <div class="card-body row text-center card-content">
+    <div class="col" *ngFor="let skill of project.skills">
+      <div class="text-value-xl">{{skill.name}}</div>
+      <div *ngFor="let skillSum of skill.sum" class="text-uppercase text-muted small">
+        {{skillSum.role.name}} - <p *ngIf="!updateRoleCount">{{skillSum.count}}</p> <input *ngIf="updateRoleCount" type="number" min="0" [(ngModel)]="skillSum.count">
+      </div>
+    </div>
+    <button type="button" (click)="updateRoleCount=!updateRoleCount">Update</button> 
+  </div>
+
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-outline-secondary" (click)="modal.dismiss('cancel click')">Cancel</button>
+  <button type="button" ngbAutofocus class="btn btn-danger" (click)="closeAndSave()">Ok</button>
+</div>
