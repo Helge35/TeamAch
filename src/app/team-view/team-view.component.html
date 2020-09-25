@@ -1,3 +1,71 @@
+<div class="mainscreen shadowboxes flexboxes2">
+  <div class="teamplace">
+    <h2>List of team members</h2>
+    <div class="btnplace">
+      <button [routerLink]="['/details']"><i class="fas fa-user-plus"></i>Add Member</button>
+      <button><i class="fas fa-cogs"></i>Set Roles</button>
+    </div>
+    
+    <div class="teamlist">
+
+      <div class="team">
+        <div class="imgplace"><img src="/src/images/img.jpg" /></div>
+        <div class="abstract">
+          <h3>James Anderson</h3>
+          <div class="cutplace"><p>Lorem Ipsum is simply dummy text of the printing and type setting industry. Lorem Ipsum has beenorem Ipsum is simply dummy text of the printing and type setting industry.</p></div>
+          <div class="moreoptions">
+            <button class="fas fa-info-circle" title="Open info"></button>
+            <button class="far fa-user-circle" title="Open member"></button>
+          </div>
+          <div class="inproject" >
+            <h4>Member in projects:</h4>
+            <button>M</button>
+            <button>XYZ</button>
+            <button>AB</button>
+            <button>007</button>
+          </div>
+        </div>
+      </div>
+    
+    </div>
+  </div>
+
+  <div class="alertplace">
+    <h2>Alert place</h2>
+    <div class="btnplace">
+      <button><i class="fas fa-th-list"></i>View All List</button>
+    </div>
+    
+    <div class="alertlist">
+      <div class="alertdata alertlevel0">
+        <h3>Title</h3>
+        <p>Lorem Ipsum is simply dummy text of the printing and type setting industry. Lorem Ipsum has beenorem Ipsum is simply dummy text of the printing and type setting industry.</p>
+      </div>
+      <div class="alertdata alertlevel1">
+        <h3>Title</h3>
+        <p>Lorem Ipsum is simply dummy text of the printing and type setting industry. Lorem Ipsum has beenorem Ipsum is simply dummy text of the printing and type setting industry.</p>
+      </div>
+      <div class="alertdata">
+        <h3>Title</h3>
+        <p>Lorem Ipsum is simply dummy text of the printing and type setting industry. Lorem Ipsum has beenorem Ipsum is simply dummy text of the printing and type setting industry.</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
 <div class="row">
   <button [routerLink]="['/details']" class="btn-primary">Add Member</button>
   <button class="btn-primary">Set Roles</button>
@@ -6,29 +74,7 @@
 <div class="row">
 
   <div class="col-9">
-    <!--
-    <div class="card border-primary mb-3">
-      <div class="card-header">Projects</div>
-      <div class="card-body text-primary">
-        <span *ngFor="let project of projectList" style="color: white; margin-left: 10px; font-size: 14px;"
-          [style.background-color]="project.color" class="badge">{{project.name}}
-          <button style="margin-left: 10px; margin-top:-6px ;" type="button" class="close" aria-label="Close">
-            <span style="height: 10px;" aria-hidden="true">&times;</span>
-          </button>
-        </span>
-      </div>
-    </div>
 
-        <ul class="list-group list-group-flush">
-      <li *ngFor="let member of team " class="list-group-item d-flex justify-content-between align-items-center">
-
-        <div style="width: 300px;" [style.background-color]="member.role.color">
-          {{member.name}}  <span style="margin-left:10px ; color: #BBBAC6;">[ {{member.role.name}} ]</span>
-        </div>
-        <button class="btn-primary" [routerLink]="['/details', member.id]">Edit</button>
-      </li>
-    </ul>
--->
 
     <div class="card border-primary mb-3">
       <div class="card-header">Projects</div>
@@ -61,4 +107,4 @@
     </div>
   </div>
 
-</div>
+</div>-->
