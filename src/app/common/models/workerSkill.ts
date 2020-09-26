@@ -1,4 +1,6 @@
+import { Skill } from './skill';
+
 export class WorkerSkill{
-    skillId :number;
+    skill :Skill;
     levelId : number;
 }

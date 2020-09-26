@@ -1,2 +1,2 @@
-json-server --watch mock-data.json
+json-server --watch src\server-mock\mock-data.json
 ng serve -o

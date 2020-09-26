@@ -27,15 +27,16 @@ export class MatrixComponent implements OnInit {
       worker.skills = [];
 
       this.skills.forEach(skill => {
-        let existedSkill = tempSkills.find(x => x.skillId == skill.id);
+        let existedSkill = tempSkills.find(x => x.skill.id == skill.id);
         if (existedSkill) {
           worker.skills.push(existedSkill);
         }
         else
-          worker.skills.push({ skillId: skill.id, levelId: 0 });
+          worker.skills.push({ skill: skill, levelId: 0 });
       });
     });
   }
+
 
   /*
   
@@ -78,7 +79,7 @@ export class MatrixComponent implements OnInit {
     });
 
     this.team.forEach(worker => {
-      let roleId = worker.skills.find(x => x.skillId == skill.id).levelId;
+      let roleId = worker.skills.find(x => x.skill.id == skill.id).levelId;
       if (roleId) {
         let scillSum = skill.sum.find(x => x.role.id == roleId);
         scillSum.count = scillSum.count + 1;

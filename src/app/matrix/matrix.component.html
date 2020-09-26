@@ -11,7 +11,7 @@
         <td>{{worker.name}}</td>
         <td *ngFor="let skill of worker.skills" class="table-col">
           <div>
-            <select [(ngModel)]="skill.levelId" (change)="onSkillChange(skill.skillId)">
+            <select [(ngModel)]="skill.levelId" (change)="onSkillChange(skill.skill.Id)">
               <option *ngFor="let r of roles" [ngValue]="r.id">{{r.name }}</option>
             </select>
           </div>

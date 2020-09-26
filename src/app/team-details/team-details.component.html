@@ -1,14 +1,31 @@
+<div class="mainscreen shadowboxes flexboxes2">
+  <div class="teamplace">
+    <h2>{{member.name}}</h2>
+    <div class="imgplace"><img src={{member.iconPath}} /></div>
+    <div class="teamlist">
+      Birthday: {{member.birthday  | date:'dd.MM.yyyy'}}
 
-<div class="input-group mb-3">
-
-
-    <div class="card">
-      <div class="card-header">
-        General Info
-      </div>
-      <div class="card-body">
-        <input type="text" class="form-control" [(ngModel)]="member.name" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+      <div class="inproject" *ngIf="member.projects && member.projects.length > 0">
+        <h4>Member in projects:</h4>
+        <button *ngFor="let proj of member.projects" [style.background-color]="proj.color" >{{proj.alias}}</button>
       </div>
     </div>
 
+    <h2>Skills</h2>
+    <div class="imgplace">
+      <div class="teamlist">
+        <div *ngFor="let skill of member.skills">
+          Skill: {{skill.skill.name}} , Level:             
+           <select [(ngModel)]="skill.levelId" >
+            <option *ngFor="let r of roles" [ngValue]="r.id">{{r.name }}</option>
+          </select>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="teamplace">
+    <h2>Scheduler</h2>
+  
   </div>
