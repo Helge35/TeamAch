@@ -23,11 +23,23 @@ export class MatrixComponent implements OnInit {
 
   setWorkerSkills(): void {
     this.team.forEach(worker => {
-      let tempSkills: WorkerSkill[] = [];
+      let tempSkills: WorkerSkill[] = worker.skills;
+      worker.skills = [];
 
       this.skills.forEach(skill => {
+        let existedSkill = tempSkills.find(x => x.skillId == skill.id);
+        if (existedSkill) {
+          worker.skills.push(existedSkill);
+        }
+        else
+          worker.skills.push({ skillId: skill.id, levelId: 0 });
+      });
+    });
+  }
 
-        let ws = {} as WorkerSkill;
+  /*
+  
+   let ws = {} as WorkerSkill;
         ws.skillId = skill.id;
 
         let existedSkill = worker.skills.find(x => x.skillId == skill.id);
@@ -42,11 +54,7 @@ export class MatrixComponent implements OnInit {
         }
 
         tempSkills.push(ws);
-      });
-
-      worker.skills = tempSkills;
-    });
-  }
+  */
 
   setSkillsSummery() {
     this.skills.forEach(skill => {

@@ -17,33 +17,17 @@
           </div>
         </td>
       </tr>
-    </tbody>
-    <tfoot>
       <tr>
-        <th> </th>
-        <td *ngFor="let skill of skills">
-          <div *ngFor="let s of skill.sum">
-            {{s.roleName}} : {{s.count}}
+        <td class="separator-row" colspan="100"></td>
+      </tr>
+      <tr *ngFor="let project of projectsList">
+        <td class="table-row-header">{{project.name}}</td>
+        <td class="table-col" *ngFor="let skill of skills">
+          <div>
+
           </div>
         </td>
       </tr>
-    </tfoot>
+    </tbody>
   </table>
-</div>
-
-<div class=" team-projects-div">
-  <div class="team-skills-div">
-    <table class="team-skills-tbl">
-      <tbody>
-        <tr *ngFor="let project of projectsList">
-          <td class="table-row-header">{{project.name}}</td>
-          <td class="table-col" *ngFor="let skill of skills">
-            <div>
-
-            </div>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
 </div>
