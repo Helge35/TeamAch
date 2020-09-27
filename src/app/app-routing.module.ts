@@ -11,7 +11,7 @@ import { ProjectsComponent } from './projects/projects.component';
 
 
 const routes: Routes = [
-  { path: "", redirectTo: "/matrix", pathMatch: "full" },
+  { path: "", redirectTo: "/team", pathMatch: "full" },
   { path: "team", component: TeamViewComponent },
   { path: "details", component: TeamDetailsComponent },
   { path: "details/:id", component: TeamDetailsComponent },

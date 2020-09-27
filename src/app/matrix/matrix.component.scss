@@ -16,18 +16,12 @@ table.team-skills-tbl {border-top:1px solid #ccc;border-left:1px solid #ccc;}
 
     .team-skills-div
     {
-        max-height: 500px;
+        max-height: 98%;
         width: 98%;
         overflow:auto;
     }
 
-    .team-projects-div
-    {
-        max-height: 230px;
-        width: 98%;
-        overflow:auto;
-        margin-top: 50px;
-    }
+
 
     select {
         -webkit-appearance: none;
@@ -44,7 +38,12 @@ table.team-skills-tbl {border-top:1px solid #ccc;border-left:1px solid #ccc;}
     }
 
     .table-col{
-        min-width: 80px;
+        width: 80px;
+    }
+
+    .separator-row{
+        height: 80px;
+        border-left: 0;
     }
 
    

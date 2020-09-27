@@ -6,20 +6,20 @@
       <button><i class="fas fa-cogs"></i>Set Roles</button>
     </div>
     
-    <div class="teamlist" >
+    <div class="teamlist">
 
-      <div class="team" *ngFor="let member of team ">
-        <div class="imgplace"><img src="/src/images/img.jpg" /></div>
+      <div class="team" *ngFor="let member of team">
+        <div class="imgplace"><img src="{{member.iconPath}}" /></div>
         <div class="abstract">
           <h3>{{member.name}}</h3>
-          <div class="cutplace"><p>Lorem Ipsum is simply dummy text of the printing and type setting industry. Lorem Ipsum has beenorem Ipsum is simply dummy text of the printing and type setting industry.</p></div>
+          <div class="cutplace"><p>{{member.status}}</p></div>
           <div class="moreoptions">
-            <button class="fas fa-info-circle" title="Open info"></button>
+            <button class="fas fa-info-circle" title="Open info"  [routerLink]="['/details', member.id]"></button>
             <button class="far fa-user-circle" title="Open member"></button>
           </div>
-          <div class="inproject" >
+          <div class="inproject" *ngIf="member.projects && member.projects.length > 0">
             <h4>Member in projects:</h4>
-            <button  *ngFor="let project of projectList">{{member. project.name}}</button>
+            <button *ngFor="let proj of member.projects" [style.background-color]="proj.color" >{{proj.alias}}</button>
           </div>
         </div>
       </div>
@@ -34,74 +34,18 @@
     </div>
     
     <div class="alertlist">
-      <div class="alertdata alertlevel0">
+      <div *ngFor="let msg of messagesList" class="alertdata alertlevel">
         <h3>Title</h3>
         <p>Lorem Ipsum is simply dummy text of the printing and type setting industry. Lorem Ipsum has beenorem Ipsum is simply dummy text of the printing and type setting industry.</p>
       </div>
-      <div class="alertdata alertlevel1">
+      <!--div class="alertdata alertlevel1">
         <h3>Title</h3>
         <p>Lorem Ipsum is simply dummy text of the printing and type setting industry. Lorem Ipsum has beenorem Ipsum is simply dummy text of the printing and type setting industry.</p>
       </div>
       <div class="alertdata">
         <h3>Title</h3>
         <p>Lorem Ipsum is simply dummy text of the printing and type setting industry. Lorem Ipsum has beenorem Ipsum is simply dummy text of the printing and type setting industry.</p>
-      </div>
-
+      </div-->
     </div>
   </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-<!--
-<div class="row">
-  <button [routerLink]="['/details']" class="btn-primary">Add Member</button>
-  <button class="btn-primary">Set Roles</button>
-</div>
-
-<div class="row">
-
-  <div class="col-9">
-
-
-    <div class="card border-primary mb-3">
-      <div class="card-header">Projects</div>
-      <div class="card-body text-primary">
-        <span *ngFor="let member of team " style="color: white; margin-left: 10px; font-size: 14px;"
-        [style.background-color]="member.role.color" class="badge">{{member.name}}
- 
-        </span>
-      </div>
-    </div>
-
-
-    <div class="card border-primary mb-3 float-left" *ngFor="let project of projectList">
-      <div class="card-header">{{project.name}}</div>
-      <div class="card-body text-primary">
-
-      </div>
-    </div>
-
-
-
-
-  </div>
-  <div class="col-3" style="height:600px; overflow-x:none;  overflow-y:auto;">
-    <div *ngFor="let msg of messagesList" class="card text-white bg-secondary mb-3">
-      <div class="card-header">{{msg.title}}</div>
-      <div class="card-body">
-        <p class="card-text">{{msg.text}}</p>
-      </div>
-    </div>
-  </div>
-
-</div>-->

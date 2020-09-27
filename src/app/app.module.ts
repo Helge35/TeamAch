@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +15,7 @@ import { MatrixComponent } from './matrix/matrix.component';
 import { WorkerSkillComponent } from './worker-skill/worker-skill.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { ProjectDetailsComponent } from './projects/project-details/project-details.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +29,7 @@ import { ProjectDetailsComponent } from './projects/project-details/project-deta
   ],
   imports: [
     BrowserModule,
+    DragDropModule,
     AppRoutingModule,
     NgbModule,
     CommonModule,
@@ -37,3 +40,5 @@ import { ProjectDetailsComponent } from './projects/project-details/project-deta
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+//json-server --watch mock-data.json

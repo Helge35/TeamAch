@@ -23,11 +23,24 @@ export class MatrixComponent implements OnInit {
 
   setWorkerSkills(): void {
     this.team.forEach(worker => {
-      let tempSkills: WorkerSkill[] = [];
+      let tempSkills: WorkerSkill[] = worker.skills;
+      worker.skills = [];
 
       this.skills.forEach(skill => {
+        let existedSkill = tempSkills.find(x => x.skill.id == skill.id);
+        if (existedSkill) {
+          worker.skills.push(existedSkill);
+        }
+        else
+          worker.skills.push({ skill: skill, levelId: 0 });
+      });
+    });
+  }
 
-        let ws = {} as WorkerSkill;
+
+  /*
+  
+   let ws = {} as WorkerSkill;
         ws.skillId = skill.id;
 
         let existedSkill = worker.skills.find(x => x.skillId == skill.id);
@@ -42,11 +55,7 @@ export class MatrixComponent implements OnInit {
         }
 
         tempSkills.push(ws);
-      });
-
-      worker.skills = tempSkills;
-    });
-  }
+  */
 
   setSkillsSummery() {
     this.skills.forEach(skill => {
@@ -70,7 +79,7 @@ export class MatrixComponent implements OnInit {
     });
 
     this.team.forEach(worker => {
-      let roleId = worker.skills.find(x => x.skillId == skill.id).levelId;
+      let roleId = worker.skills.find(x => x.skill.id == skill.id).levelId;
       if (roleId) {
         let scillSum = skill.sum.find(x => x.role.id == roleId);
         scillSum.count = scillSum.count + 1;
