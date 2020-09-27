@@ -142,3 +142,6 @@ header {position:fixed;left:0;top:0;width:100%;z-index:998;background: #454a5e;}
 	.teamplace h2, .alertplace h2 {margin-bottom:10px;}
 	.teamlist .team, .alertplace .alertdata {margin:4%;}
 }
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
