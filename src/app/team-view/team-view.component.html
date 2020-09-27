@@ -6,12 +6,12 @@
       <button><i class="fas fa-cogs"></i>Set Roles</button>
     </div>
     
-    <div class="teamlist">
+    <div class="teamlist" >
 
-      <div class="team">
+      <div class="team" *ngFor="let member of team ">
         <div class="imgplace"><img src="/src/images/img.jpg" /></div>
         <div class="abstract">
-          <h3>James Anderson</h3>
+          <h3>{{member.name}}</h3>
           <div class="cutplace"><p>Lorem Ipsum is simply dummy text of the printing and type setting industry. Lorem Ipsum has beenorem Ipsum is simply dummy text of the printing and type setting industry.</p></div>
           <div class="moreoptions">
             <button class="fas fa-info-circle" title="Open info"></button>
@@ -19,10 +19,7 @@
           </div>
           <div class="inproject" >
             <h4>Member in projects:</h4>
-            <button>M</button>
-            <button>XYZ</button>
-            <button>AB</button>
-            <button>007</button>
+            <button  *ngFor="let project of projectList">{{member. project.name}}</button>
           </div>
         </div>
       </div>
