@@ -3,29 +3,72 @@
     <h2>{{member.name}}</h2>
     <div class="imgplace"><img src={{member.iconPath}} /></div>
     <div class="teamlist">
+      Email: {{member.email}}
+      Phone: {{member.phone}}
       Birthday: {{member.birthday  | date:'dd.MM.yyyy'}}
 
       <div class="inproject" *ngIf="member.projects && member.projects.length > 0">
-        <h4>Member in projects:</h4>
-        <button *ngFor="let proj of member.projects" [style.background-color]="proj.color" >{{proj.alias}}</button>
+        <h4>Member in projects:</h4> 
+        <button *ngFor="let proj of member.projects" [style.background-color]="proj.color">{{proj.alias}}</button>
       </div>
     </div>
 
-    <h2>Skills</h2>
-    <div class="imgplace">
-      <div class="teamlist">
+    <h4>Skills</h4>
+    <div class="card" style="width: 40rem;">
+      <div class="card-body">
+        <button class="btn btn-secondary"  type="button">Asign/Remove skill</button>
         <div *ngFor="let skill of member.skills">
-          Skill: {{skill.skill.name}} , Level:             
-           <select [(ngModel)]="skill.levelId" >
+          Skill: {{skill.skill.name}} , Level:
+          <select [(ngModel)]="skill.levelId">
             <option *ngFor="let r of roles" [ngValue]="r.id">{{r.name }}</option>
           </select>
         </div>
-
       </div>
     </div>
+    <h4>Absence</h4>
+    <div class="card" style="width: 40rem;">
+      <div class="card-header">
+        <div style="float: left;">
+          From date:
+          <form class="form-inline">
+            <div class="form-group">
+              <div class="input-group">
+                <input class="form-control" placeholder="yyyy-mm-dd" name="dpFrom" [(ngModel)]="fromAbsenceDateModel"
+                  ngbDatepicker #dFrom="ngbDatepicker">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary calendar" (click)="dFrom.toggle()" type="button"></button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div style="float: left;">
+          To date:
+          <form class="form-inline">
+            <div class="form-group">
+              <div class="input-group">
+                <input class="form-control" placeholder="yyyy-mm-dd" name="dpTo" [(ngModel)]="toAbsenceDateModel"
+                  ngbDatepicker #dTo="ngbDatepicker">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary calendar" (click)="dTo.toggle()" type="button"></button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <button class="btn btn-secondary" (click)="addAbsence()" type="button">Add</button>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Absence List</h5>
+        <div *ngFor="let range of member.absences">
+          {{range.from | date:'dd.MM.yyyy'}} - {{range.to | date:'dd.MM.yyyy'}} <button class="btn btn-secondary" (click)="removeAbsence(range.id)" type="button">X</button>
+        </div>
+      </div>
+    </div>
+
   </div>
 
   <div class="teamplace">
     <h2>Scheduler</h2>
-  
+
   </div>
