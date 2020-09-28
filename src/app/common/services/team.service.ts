@@ -9,6 +9,7 @@ import { Project } from '../models/project';
 import { Role } from '../models/role';
 import { Skill } from '../models/skill';
 import { SkillSum } from '../models/skillSum';
+import { Absence } from 'src/app/common/models/absence';
 
 @Injectable({
   providedIn: 'root',
@@ -44,4 +45,11 @@ export class TeamService {
     return this.http.get<Skill[]>(this.url + 'skills')
   }
 
+  addAbsence(absence: Absence): Observable<number> {
+    return this.http.post<number>(this.url, absence);
+  }
+
+  removeAbsence(id: number) {
+    this.http.post(this.url, id);
+  }
 }

@@ -1,20 +1,24 @@
 {
   "team": [
-      {"id": 1, "name": "Tomer", "email": "tomer@email.com", "iconPath":"../../../../assets/icons/1.png", "birthday":"2009-12-25", "status": "Ready", "role":{"id": 1, "name":"Junior","shortName":"Jun", "color":"#96FFF9"}, "managerId":4,"skills":[{"skill":{"id": 1, "name":"C#"}, "levelId":1}, {"skill":{"id": 2, "name":"Sql"}, "levelId":2}],
+      {"id": 1, "name": "Tomer", "email": "tomer@email.com", "phone":"0508888888", "iconPath":"../../../../assets/icons/1.png", "birthday":"2009-12-25", "status": "Ready", "role":{"id": 1, "name":"Junior","shortName":"Jun", "color":"#96FFF9"}, "managerId":4,"skills":[{"skill":{"id": 1, "name":"C#"}, "levelId":1}, {"skill":{"id": 2, "name":"Sql"}, "levelId":2}],
          "projects":[
+
            {"id": 1, "name":"First", "alias":"F","color":"#CCFF66"},
             {"id": 2, "name":"Second", "alias":"S","color":"#E6BEAE"},
          {"id": 3, "name":"Project 3", "alias":"P3", "color":"#CBCBD4"},
-         {"id": 4, "name":"Project 4" ,"alias":"P4", "color":"#EEE4E1"}]
+         {"id": 4, "name":"Project 4" ,"alias":"P4", "color":"#EEE4E1"}],
+
+         "absences": [{"id": 1, "from": "2020-02-01",  "to": "2020-02-03"}, {"id": 2, "from": "2020-02-22",  "to": "2020-02-22"}]
+
         },
-      {"id": 2, "name": "Nikolas", "email": "nikolas@email.com", "iconPath":"../../../../assets/icons/2.png", "status": "Ready","role":{"id": 2, "name":"Midl", "shortName":"M", "color":"#B7CDFF"}, "managerId":0, "skills":[{"skill":{"id": 2, "name":"Sql"}, "levelId":2}]
+      {"id": 2, "name": "Nikolas", "email": "nikolas@email.com","phone":"0508888888", "iconPath":"../../../../assets/icons/2.png", "status": "Ready","role":{"id": 2, "name":"Midl", "shortName":"M", "color":"#B7CDFF"}, "managerId":0, "skills":[{"skill":{"id": 2, "name":"Sql"}, "levelId":2}]
     ,"projects":[{"id": 3, "name":"Project 3", "alias":"P3", "color":"yellow"}]},
-      {"id": 3, "name": "Ted", "email": "ted@email.com" ,"iconPath":"../../../../assets/icons/3.png","status": "Away",  "role":{"id": 1, "name":"Junior", "shortName":"Jun", "color":"#96FFF9"} , "managerId":4, "skills":[{"skill":{"id": 3, "name":"C++"}, "levelId":3}],
+      {"id": 3, "name": "Ted", "email": "ted@email.com" ,"phone":"0508888888","iconPath":"../../../../assets/icons/3.png","status": "Away",  "role":{"id": 1, "name":"Junior", "shortName":"Jun", "color":"#96FFF9"} , "managerId":4, "skills":[{"skill":{"id": 3, "name":"C++"}, "levelId":3}],
       "projects":[{"id": 3, "name":"Project 3", "alias":"P3", "color":"yellow"},
         {"id": 7, "name":"Project 7","alias":"P7", "color":"gold"}]},
-      {"id": 4, "name": "Yaniv", "email": "yaniv@email.com" ,"iconPath":"../../../../assets/icons/2.png", "status": "Busy",  "role":{"id": 3, "name":"Senior", "shortName":"Sen", "color":"#1E9FA1"}, "managerId":0, "skills":[{"skill":{"id": 1, "name":"C#"}, "levelId":1}, {"skill":{"id": 2, "name":"Sql"}, "levelId":2}],
+      {"id": 4, "name": "Yaniv", "email": "yaniv@email.com" ,"phone":"0508888888","iconPath":"../../../../assets/icons/2.png", "status": "Busy",  "role":{"id": 3, "name":"Senior", "shortName":"Sen", "color":"#1E9FA1"}, "managerId":0, "skills":[{"skill":{"id": 1, "name":"C#"}, "levelId":1}, {"skill":{"id": 2, "name":"Sql"}, "levelId":2}],
       "projects":[]},
-      {"id": 5, "name": "Vasili", "email": "vasia@email.com","iconPath":"../../../../assets/icons/2.png","status": "Ready",  "role":{"id": 0, "name":"Unknown", "shortName":"", "color":"#F7FDFF"}, "managerId":2, "skills":[{"skill":{"id": 1, "name":"C#"}, "levelId":1}, {"skill":{"id": 3, "name":"C++"}, "levelId":3}],
+      {"id": 5, "name": "Vasili", "email": "vasia@email.com","phone":"0508888888","iconPath":"../../../../assets/icons/2.png","status": "Ready",  "role":{"id": 0, "name":"Unknown", "shortName":"", "color":"#F7FDFF"}, "managerId":2, "skills":[{"skill":{"id": 1, "name":"C#"}, "levelId":1}, {"skill":{"id": 3, "name":"C++"}, "levelId":3}],
       "projects":[]}
   
   ],
