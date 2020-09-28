@@ -2,10 +2,10 @@
   "team": [
       {"id": 1, "name": "Tomer", "email": "tomer@email.com", "iconPath":"../../../../assets/icons/1.png", "birthday":"2009-12-25", "status": "Ready", "role":{"id": 1, "name":"Junior","shortName":"Jun", "color":"#96FFF9"}, "managerId":4,"skills":[{"skill":{"id": 1, "name":"C#"}, "levelId":1}, {"skill":{"id": 2, "name":"Sql"}, "levelId":2}],
          "projects":[
-           {"id": 1, "name":"First", "alias":"F","color":"green"},
-            {"id": 2, "name":"Second", "alias":"S","color":"red"},
-         {"id": 3, "name":"Project 3", "alias":"P3", "color":"yellow"},
-         {"id": 4, "name":"Project 4" ,"alias":"P4", "color":"aqua"}]
+           {"id": 1, "name":"First", "alias":"F","color":"#CCFF66"},
+            {"id": 2, "name":"Second", "alias":"S","color":"#E6BEAE"},
+         {"id": 3, "name":"Project 3", "alias":"P3", "color":"#CBCBD4"},
+         {"id": 4, "name":"Project 4" ,"alias":"P4", "color":"#EEE4E1"}]
         },
       {"id": 2, "name": "Nikolas", "email": "nikolas@email.com", "iconPath":"../../../../assets/icons/2.png", "status": "Ready","role":{"id": 2, "name":"Midl", "shortName":"M", "color":"#B7CDFF"}, "managerId":0, "skills":[{"skill":{"id": 2, "name":"Sql"}, "levelId":2}]
     ,"projects":[{"id": 3, "name":"Project 3", "alias":"P3", "color":"yellow"}]},

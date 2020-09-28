@@ -21,22 +21,22 @@
     ],
 
     "projects":[
-        {"id ": 1, "name":"First", "color":"green" ,"neededRoles":[{"roleId":1,"roleName":"Junior", "count":2}]},
-        {"id ": 2, "name":"Second", "color":"red","neededRoles":[{"roleId":1,"roleName":"Junior", "count":2}]},
-        {"id ": 3, "name":"Project 3", "color":"yellow","neededRoles":[{"roleId":1,"roleName":"Junior", "count":2}, {"roleId":3,"roleName":"Senior", "count":1}]},
-        {"id ": 4, "name":"Project 4" , "color":"aqua","neededRoles":[{"roleId":1,"roleName":"Junior", "count":2}]},
-        {"id ": 5, "name":"Project 5", "color":"gray", "neededRoles":[]},
-        {"id ": 6, "name":"Project 6", "color":"silver", "neededRoles":[]},
-        {"id ": 7, "name":"Project 7", "color":"gold" ,"neededRoles":[]},
-        {"id ": 8, "name":"Project 8", "color":"black", "neededRoles":[]},
+        {"id ": 1, "name":"First", "color":"#C9EDDC" ,"neededRoles":[{"roleId":1,"roleName":"Junior", "count":2}]},
+        {"id ": 2, "name":"Second", "color":"#82968C","neededRoles":[{"roleId":1,"roleName":"Junior", "count":2}]},
+        {"id ": 3, "name":"Project 3", "color":"#6A706E","neededRoles":[{"roleId":1,"roleName":"Junior", "count":2}, {"roleId":3,"roleName":"Senior", "count":1}]},
+        {"id ": 4, "name":"Project 4" , "color":"#4C3B4D","neededRoles":[{"roleId":1,"roleName":"Junior", "count":2}]},
+        {"id ": 5, "name":"Project 5", "color":"#C2B97F", "neededRoles":[]},
+        {"id ": 6, "name":"Project 6", "color":"#88665D", "neededRoles":[]},
+        {"id ": 7, "name":"Project 7", "color":"#4E937A" ,"neededRoles":[]},
+        {"id ": 8, "name":"Project 8", "color":"#39A0ED", "neededRoles":[]},
     ],
 
     "roles":[
-        {"id ": 0, "name":"", "shortName":"", "color":"#F7FDFF"},
-        {"id ": 1, "name":"Junior","shortName":"Jun", "color":"#96FFF9"},
-        {"id ": 2, "name":"Midl", "shortName":"M","color":"#B7CDFF"},
-        {"id ": 3, "name":"Senior", "shortName":"Sen","color":"#1E9FA1"},
-        {"id ": 4, "name":"TeamLead","shortName":"TL", "color":"#A06B98"}
+        {"id ": 0, "name":"", "shortName":"", "color":"#C9EDDC"},
+        {"id ": 1, "name":"Junior","shortName":"Jun", "color":"#82968C"},
+        {"id ": 2, "name":"Midl", "shortName":"M","color":"#6A706E"},
+        {"id ": 3, "name":"Senior", "shortName":"Sen","color":"#4C3B4D"},
+        {"id ": 4, "name":"TeamLead","shortName":"TL", "color":"#C2B97F"}
     ],
 
     "skills": [
