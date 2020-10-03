@@ -107,6 +107,12 @@
         {"id": 32, "name":"Team Work", "isHard":false, "sum":[]}
     ],
     "matrix": []
-  }
+  },
+
+  "journalEntries" : [
+    {"id": 1,  "taskId":"#5", "memberId":1, "title":"First Offer", "description":""},
+    {"id": 2,  "taskId":"#67", "memberId":1, "title":"Second Offer", "description":""}
+
+]
   
 }

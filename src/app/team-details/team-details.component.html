@@ -3,7 +3,7 @@
     <h2>{{member.name}}</h2>
     <div class="imgplace"><img src={{member.iconPath}} /></div>
 
-    
+
     <div class="teamitemdata">
       <div>Birthday: {{member.birthday  | date:'dd.MM.yyyy'}}</div>
       <div>{{member.email}}</div>
@@ -11,30 +11,31 @@
       <div>address</div>
     </div>
 
-      <div class="inprojectfull" *ngIf="member.projects && member.projects.length > 0">
-        <h4>Member in projects:</h4>
-        <div *ngFor="let proj of member.projects">
-          <span class="title">{{proj.name}}</span>
-          <span>Description</span>
-        </div>
-        
-        <button *ngFor="let proj of member.projects" [style.background-color]="proj.color" style="display: none;">{{proj.alias}}</button>
+    <div class="inprojectfull" *ngIf="member.projects && member.projects.length > 0">
+      <h4>Member in projects:</h4>
+      <div *ngFor="let proj of member.projects">
+        <span class="title">{{proj.name}}</span>
+        <span>Description</span>
       </div>
-    
-  <div class="skillsplace">
-    <h2>Skills</h2>
-    <button class="btn btn-secondary"  type="button">Asign/Remove skill</button>
-        <div *ngFor="let skill of member.skills" class="skill">
-          <span class="title">Skill:</span><span class="level">{{skill.skill.name}} </span>
-          <span class="title">Level:</span>             
-           <select [(ngModel)]="skill.levelId" >
-            <option *ngFor="let r of roles" [ngValue]="r.id">{{r.name }}</option>
-          </select>
-        </div>
+
+      <button *ngFor="let proj of member.projects" [style.background-color]="proj.color"
+        style="display: none;">{{proj.alias}}</button>
+    </div>
+
+    <div class="skillsplace">
+      <h2>Skills</h2>
+      <button class="btn btn-secondary" type="button">Asign/Remove skill</button>
+      <div *ngFor="let skill of member.skills" class="skill">
+        <span class="title">Skill:</span><span class="level">{{skill.skill.name}} </span>
+        <span class="title">Level:</span>
+        <select [(ngModel)]="skill.levelId">
+          <option *ngFor="let r of roles" [ngValue]="r.id">{{r.name }}</option>
+        </select>
+      </div>
     </div>
 
     <h4>Absence</h4>
-    <div class="card" >
+    <div class="card">
       <div class="card-header">
         <div style="float: left;">
           From date:
@@ -69,7 +70,8 @@
       <div class="card-body">
         <h5 class="card-title">Absence List</h5>
         <div *ngFor="let range of member.absences">
-          {{range.from | date:'dd.MM.yyyy'}} - {{range.to | date:'dd.MM.yyyy'}} <button class="btn btn-secondary" (click)="removeAbsence(range.id)" type="button">X</button>
+          {{range.from | date:'dd.MM.yyyy'}} - {{range.to | date:'dd.MM.yyyy'}} <button class="btn btn-secondary"
+            (click)="removeAbsence(range.id)" type="button">X</button>
         </div>
       </div>
     </div>
@@ -78,6 +80,12 @@
   </div>
 
   <div class="teamplace">
-    <h2>Scheduler</h2>
-
+    <h2>Journal</h2>
+    <div class="list-group" style="max-height: 300px; overflow-y: auto;">
+      <h4>Tasks / Offers</h4>
+      <a (click)="openEntryDetails(task.id)" class="list-group-item list-group-item-action"
+        *ngFor="let task of journalTasksList">{{task.title}} </a>
+    </div>
+    <hr />
+    <a (click)="openEntryDetails(0)" class="list-group-item list-group-item-action active">Custom entry</a>
   </div>

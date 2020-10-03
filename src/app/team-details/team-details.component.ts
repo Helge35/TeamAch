@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { Member } from '../common/models/member';
 import { TeamService } from '../common/services/team.service';
 import { Role } from '../common/models/role';
 import { Absence } from '../common/models/absence';
+import {JournalEntryComponent} from './journal-entry/journal-entry.component';
+import { JournalEntry } from './journal-entry/models/journal-entry';
 
 @Component({
   selector: 'app-team-details',
@@ -19,6 +22,7 @@ export class TeamDetailsComponent implements OnInit {
   id: number;
   fromAbsenceDateModel: NgbDateStruct;
   toAbsenceDateModel: NgbDateStruct;
+  journalTasksList : JournalEntry[]= [];
 
   addAbsence() {
     let abc = new Absence();
@@ -36,8 +40,13 @@ export class TeamDetailsComponent implements OnInit {
   this.member.absences = this.member.absences.filter(obj => obj.id != id);
   }
 
+  openEntryDetails(id: number)
+  {
+    const modalDetails = this.modalService.open(JournalEntryComponent, { centered: true , scrollable: true});
+    modalDetails.componentInstance.entryId = id;
+  }
 
-  constructor(private route: ActivatedRoute, private teamService: TeamService) { }
+  constructor(private route: ActivatedRoute, private teamService: TeamService,  private modalService: NgbModal) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(params => { this.id = +params['id']; });
@@ -48,5 +57,9 @@ export class TeamDetailsComponent implements OnInit {
     }
 
     this.teamService.getRoles().subscribe(r => this.roles = r);
+    this.teamService.getJournalTasksByMemeber(this.member.id).subscribe(j=> this.journalTasksList = j);
+
+    //test
+    this.openEntryDetails(1);
   }
 }

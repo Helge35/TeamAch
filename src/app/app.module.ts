@@ -15,6 +15,7 @@ import { MatrixComponent } from './matrix/matrix.component';
 import { WorkerSkillComponent } from './worker-skill/worker-skill.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { ProjectDetailsComponent } from './projects/project-details/project-details.component';
+import { JournalEntryComponent } from './team-details/journal-entry/journal-entry.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ProjectDetailsComponent } from './projects/project-details/project-deta
     MatrixComponent,
     WorkerSkillComponent,
     ProjectsComponent,
-    ProjectDetailsComponent
+    ProjectDetailsComponent,
+    JournalEntryComponent
   ],
   imports: [
     BrowserModule,
