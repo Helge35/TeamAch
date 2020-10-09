@@ -60,10 +60,6 @@ export class TeamDetailsComponent implements OnInit {
 
     this.teamService.getRoles().subscribe(r => this.roles = r);
     this.teamService.getJournalTasksByMemeber(this.member.id).subscribe(j => this.journalTasksList = j);
-    this.teamService.getCriteries().subscribe(c => {
-      this.criteriesList = c;
-      //test
-      this.openEntryDetails(1);
-    });
+    this.teamService.getCriteries().subscribe(c => { this.criteriesList = c; });
   }
 }
