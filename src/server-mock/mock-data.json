@@ -110,9 +110,19 @@
   },
 
   "journalEntries" : [
-    {"id": 1,  "taskId":"#5", "memberId":1, "title":"First Offer", "description":""},
-    {"id": 2,  "taskId":"#67", "memberId":1, "title":"Second Offer", "description":""}
-
-]
-  
+    {"id": 1,  "taskId":"#5", "memberId":1, "title":"First Offer", "description":"", "criteries": [{"id": 5, "name":"Criteria 5","rate": 8}, {"id": 9, "name":"Criteria 9", "rate": 6}]},
+    {"id": 2,  "taskId":"#67", "memberId":1, "title":"Second Offer", "description":"", "criteries": [{"id": 2, "name":"Criteria 2","rate": 6}, {"id": 4, "name":"Criteria 4","rate": 9}]}
+  ],
+  "criteries": [
+    {"id": 1, "name":"Criteria 1", "rate": 5},
+    {"id": 2, "name":"Criteria 2", "rate": 5},
+    {"id": 3, "name":"Criteria 3", "rate": 5},
+    {"id": 4, "name":"Criteria 4", "rate": 5},
+    {"id": 5, "name":"Criteria 5", "rate": 5},
+    {"id": 6, "name":"Criteria 6", "rate": 5},
+    {"id": 7, "name":"Criteria 7", "rate": 5},
+    {"id": 8, "name":"Criteria 8", "rate": 5},
+    {"id": 9, "name":"Criteria 9", "rate": 5},
+    {"id": 10, "name":"Criteria 10", "rate": 5}
+  ]
 }

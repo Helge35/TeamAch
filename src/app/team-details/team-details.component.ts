@@ -7,8 +7,9 @@ import { Member } from '../common/models/member';
 import { TeamService } from '../common/services/team.service';
 import { Role } from '../common/models/role';
 import { Absence } from '../common/models/absence';
-import {JournalEntryComponent} from './journal-entry/journal-entry.component';
-import { JournalEntry } from './journal-entry/models/journal-entry';
+import { JournalEntryComponent } from './journal-entry/journal-entry.component';
+import { JournalEntry } from '../common/models/journal-entry';
+import { Criteria } from '../common/models/criteria';
 
 @Component({
   selector: 'app-team-details',
@@ -22,31 +23,32 @@ export class TeamDetailsComponent implements OnInit {
   id: number;
   fromAbsenceDateModel: NgbDateStruct;
   toAbsenceDateModel: NgbDateStruct;
-  journalTasksList : JournalEntry[]= [];
+  journalTasksList: JournalEntry[] = [];
+  criteriesList: Criteria[] = [];
 
   addAbsence() {
     let abc = new Absence();
     abc.from = new Date(this.fromAbsenceDateModel.year, this.fromAbsenceDateModel.month, this.fromAbsenceDateModel.day);
     abc.to = new Date(this.toAbsenceDateModel.year, this.toAbsenceDateModel.month, this.toAbsenceDateModel.day);
-   // this.teamService.addAbsence(abc).subscribe(a => {
-     // abc.id = a;
-      this.member.absences.push(abc);
-   // });
+    // this.teamService.addAbsence(abc).subscribe(a => {
+    // abc.id = a;
+    this.member.absences.push(abc);
+    // });
   }
 
   removeAbsence(id: number) {
     let abc = this.member.absences.find(x => x.id == id);
-  //  this.teamService.removeAbsence(id);
-  this.member.absences = this.member.absences.filter(obj => obj.id != id);
+    //  this.teamService.removeAbsence(id);
+    this.member.absences = this.member.absences.filter(obj => obj.id != id);
   }
 
-  openEntryDetails(id: number)
-  {
-    const modalDetails = this.modalService.open(JournalEntryComponent, { centered: true , scrollable: true});
+  openEntryDetails(id: number) {
+    const modalDetails = this.modalService.open(JournalEntryComponent, { centered: true, scrollable: true });
     modalDetails.componentInstance.entryId = id;
+    modalDetails.componentInstance.criteriesList = this.criteriesList;
   }
 
-  constructor(private route: ActivatedRoute, private teamService: TeamService,  private modalService: NgbModal) { }
+  constructor(private route: ActivatedRoute, private teamService: TeamService, private modalService: NgbModal) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(params => { this.id = +params['id']; });
@@ -57,9 +59,11 @@ export class TeamDetailsComponent implements OnInit {
     }
 
     this.teamService.getRoles().subscribe(r => this.roles = r);
-    this.teamService.getJournalTasksByMemeber(this.member.id).subscribe(j=> this.journalTasksList = j);
-
-    //test
-    this.openEntryDetails(1);
+    this.teamService.getJournalTasksByMemeber(this.member.id).subscribe(j => this.journalTasksList = j);
+    this.teamService.getCriteries().subscribe(c => {
+      this.criteriesList = c;
+      //test
+      this.openEntryDetails(1);
+    });
   }
 }

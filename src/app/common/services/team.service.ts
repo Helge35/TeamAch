@@ -10,7 +10,8 @@ import { Role } from '../models/role';
 import { Skill } from '../models/skill';
 import { SkillSum } from '../models/skillSum';
 import { Absence } from 'src/app/common/models/absence';
-import { JournalEntry } from 'src/app/team-details/journal-entry/models/journal-entry';
+import { JournalEntry } from 'src/app/common/models/journal-entry';
+import { Criteria } from '../models/criteria';
 
 @Injectable({
   providedIn: 'root',
@@ -60,5 +61,9 @@ export class TeamService {
 
   getJournalEntry(id: number): Observable<JournalEntry> {
     return this.http.get<JournalEntry>(this.url + "journalEntries/" + id);
+  }
+
+  getCriteries(): Observable<Criteria[]> {
+    return this.http.get<Criteria[]>(this.url + "criteries");
   }
 }
