@@ -9,13 +9,11 @@
     <div class="teamlist">
 
       <div class="team" *ngFor="let member of team">
-        <div class="imgplace"><img src="{{member.iconPath}}" /></div>
+        <div class="imgplace"><img src="{{member.iconPath}}" /><button class="fas fa-chevron-circle-down ready" title="{{member.status}}"></button></div>
         <div class="abstract">
           <h3>{{member.name}}</h3>
-          <div class="moreoptions">
-            <button class="fas fa-info-circle" title="Open info"  [routerLink]="['/details', member.id]"></button>
-            <button class="far fa-user-circle" title="Open member"></button>
-            <button class="fas fa-chevron-circle-down ready" title="{{member.status}}"></button>
+          <div class="btnplace">
+            <button  title="Open info"  [routerLink]="['/details', member.id]"><i class="fas fa-info-circle"></i>Open info</button>
           </div>
           <div class="inproject" *ngIf="member.projects && member.projects.length > 0">
             <h4>Member in projects:</h4>

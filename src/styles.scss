@@ -42,7 +42,7 @@ button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}
     border:none;
   }
 html {font-size:100%;-webkit-text-size-adjust:none;-ms-text-size-adjust:none}
-body {font-size:15px;-webkit-animation: bugfix infinite 1s;overflow-x:hidden;line-height: 1.5;color: #191e22;background: #e9eef2;}
+html body {font-size:15px;-webkit-animation: bugfix infinite 1s;overflow-x:hidden;line-height: 1.5;color: #191e22;background-color: #e9eef2;}
 h1, h2, h3, h4, h5, h6, h7 {color:#202222;margin:0px 0px 10px 0px;line-height:100%;font-size:18px;font-weight:300;}
 h1 {font-size:32px;}
 h2 {font-size:22px;} 
@@ -80,7 +80,7 @@ header {position:fixed;left:0;top:0;width:100%;z-index:998;background: #454a5e;}
 .mainmenu button:hover, .mainmenu button:focus {background:#c87359;border:1px solid #c87359;}
 
 .teamplace {position:relative;width:49%;margin:1%;padding:1%;background:#fff;margin-bottom: 20px;box-shadow: 0 1px 4px 0 rgba(0,0,0,.1);}
-.teamplace h2, .alertplace h2 {font-weight:600;margin:3px 0 30px 0;text-transform:uppercase}
+.teamplace h2, .alertplace h2 {font-weight:600;margin:0px 0 30px 0;text-transform:uppercase}
 .teamplace h3, .alertplace h3 {font-weight:500;}
 
 .teamlist .team {padding:0 0 20px 0;margin:0 0 20px 0;border-bottom: 1px solid #e9ecef;}
@@ -98,6 +98,7 @@ header {position:fixed;left:0;top:0;width:100%;z-index:998;background: #454a5e;}
 .inproject button:nth-of-type(3n) {background: #d3d3d3;}
 .inproject button:nth-of-type(4n) {background: #c6c6c6;}
 .inproject button:nth-of-type(5n) {background: #b7b7b7;}
+.inproject h4 {font-size:18px;}
 
 .alertlist {max-height:400px;overflow:hidden;-ms-touch-action: auto;touch-action: auto;overflow-y: auto;-ms-overflow-style: none;}
 .alertlist p {font-size: 14px;font-weight: 300;}
@@ -107,7 +108,7 @@ header {position:fixed;left:0;top:0;width:100%;z-index:998;background: #454a5e;}
 .alertlevel0 {background:#acffc5;padding:20px;}
 .alertlevel1 {background:#ffacac;padding:20px;}
 	
-.btnplace {position:absolute;right:15px;top:15px;}
+.btnplace {position:absolute;right:15px;top:20px;}
 .btnplace button {display: inline-block;vertical-align: middle;color:#ee7c66;border:none;font-size:14px;margin: 0 10px;}
 .btnplace button i {margin:0 5px 0 0}
 
@@ -129,13 +130,24 @@ header {position:fixed;left:0;top:0;width:100%;z-index:998;background: #454a5e;}
 .inprojectfull span {display: inline-block;}
 .inprojectfull .title {font-weight: 600;margin: 0 10px 0 0;}
 
-.skillsplace {margin: 20px 0;border-top:1px solid #ccc;padding: 20px 0 0 ;}
+.skillsplace {margin: 20px 0;border-top:1px solid #ccc;padding: 20px 0 0 ;position: relative;}
 .skillsplace h2 {margin: 0 0 10px 0;}
+.skillsplace .btnplace {right: 5px;}
 .skill {padding: 5px 0;border-bottom:1px solid #e9ecef;}
 .skill span {display: inline-block;}
 .skill .title {font-weight: 600;width: 50px;margin: 0 10px 0 0;}
 .skill .level {margin: 0 10px 0 0;}
 .skill select {border: 1px solid #ccc;padding:2px;}
+
+
+/*--*/
+div .card-header {margin: 0 0 10px 0;}
+div .card-header > div {float: left;margin: 0 20px 0 0;}
+div .card-header .btn.btn-secondary {margin: 22px 0 0 0;}
+div .card .btn {float: right;}
+div .card-body > div {padding: 5px 0;border-bottom:1px solid #e9ecef;}
+div .card-body > div .btn {line-height: 1;}
+
 
 
 

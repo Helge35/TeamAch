@@ -110,7 +110,7 @@
   },
 
   "journalEntries" : [
-    {"id": 1,  "taskId":"#5", "memberId":1, "title":"First Offer", "description":"", "criteries": [{"id": 5, "name":"Criteria 5","rate": 8}, {"id": 9, "name":"Criteria 9", "rate": 6}]},
+    {"id": 1,  "taskId":"#5", "memberId":1, "title":"Create Logo", "description":"", "criteries": [{"id": 5, "name":"Criteria 5","rate": 8}, {"id": 9, "name":"Criteria 9", "rate": 6}]},
     {"id": 2,  "taskId":"#67", "memberId":1, "title":"Second Offer", "description":"", "criteries": [{"id": 2, "name":"Criteria 2","rate": 6}, {"id": 4, "name":"Criteria 4","rate": 9}]}
   ],
   "criteries": [

@@ -1,6 +1,9 @@
 <div class="mainscreen shadowboxes flexboxes2">
   <div class="teamitemplace">
     <h2>{{member.name}}</h2>
+    <div class="btnplace">
+      <button><i class="fas fa-user-edit"></i>Edit</button>
+    </div>
     <div class="imgplace"><img src={{member.iconPath}} /></div>
 
 
@@ -24,7 +27,10 @@
 
     <div class="skillsplace">
       <h2>Skills</h2>
-      <button class="btn btn-secondary" type="button">Asign/Remove skill</button>
+      <div class="btnplace">
+        <button><i class="far fa-address-card"></i>Asign/Remove skill</button>
+      </div>
+      
       <div *ngFor="let skill of member.skills" class="skill">
         <span class="title">Skill:</span><span class="level">{{skill.skill.name}} </span>
         <span class="title">Level:</span>
