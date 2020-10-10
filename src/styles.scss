@@ -88,9 +88,14 @@ header {position:fixed;left:0;top:0;width:100%;z-index:998;background: #454a5e;}
 .teamlist .cutplace {  max-height: 65px;overflow: hidden;}
 .teamlist p {font-size: 14px;font-weight: 300;}
 .teamlist .abstract {overflow: hidden;position:relative}
-.teamlist .imgplace { overflow: hidden;float:left;   border-radius: 100%;background:#f0f0f0;color: #fff;width: 50px;height: 50px;display: inline-block;margin:0 3% 0 0;}
+.teamlist .imgplace { float:left; display: inline-block;margin:0 3% 0 0;position: relative;}
+.teamlist .imgplace span {overflow: hidden;display: block; border-radius: 100%;background:#f0f0f0;width: 50px;height: 50px;}
+.teamlist .imgplace button {position: absolute;right: 0;top: 0;border:1px solid #fff;border-radius: 100%;}
 .teamlist .team {position:relative}
 .teamlist .team h3 {margin: 15px 0;}
+
+.ready {color:#20FC8F}
+.notready {color:#da1111}
 
 .inproject {margin:10px 0 0 0;padding:10px 0 0 0;border-top:1px solid #e9ecef}
 .inproject button {float:left; width: 50px;height: 50px;display: inline-block;margin:0 1% 0 0;border-radius: 100%;border: 1px solid #fff;background: #f0f0f0;}
@@ -117,7 +122,8 @@ header {position:fixed;left:0;top:0;width:100%;z-index:998;background: #454a5e;}
 .moreoptions {position:absolute;right:15px;top:15px;}
 .moreoptions button {background:none;border:none;border-radius: 20px;font-size: 18px;line-height:100%;display: inline-block;text-align: center;vertical-align: middle;width:20px;height:20px;color:#999;margin: 0 3px;}
 .moreoptions button:hover {color:#c87359;}
-.moreoptions .ready {color:#20FC8F}
+
+
 
 .teamitemplace {position:relative;width:49%;margin:1%;padding:1%;background:#fff;margin-bottom: 20px;box-shadow: 0 1px 4px 0 rgba(0,0,0,.1);}
 .teamitemplace h2 {font-weight:600;margin:3px 0 30px 0;text-transform:uppercase}

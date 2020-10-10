@@ -9,7 +9,7 @@
     <div class="teamlist">
 
       <div class="team" *ngFor="let member of team">
-        <div class="imgplace"><img src="{{member.iconPath}}" /><button class="fas fa-chevron-circle-down ready" title="{{member.status}}"></button></div>
+        <div class="imgplace"><span><img src="{{member.iconPath}}" /></span><button class="fas fa-chevron-circle-down ready" title="{{member.status}}"></button></div>
         <div class="abstract">
           <h3>{{member.name}}</h3>
           <div class="btnplace">
