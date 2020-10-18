@@ -27,20 +27,20 @@ button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}
 :-ms-input-placeholder {color: #000000;} 
 :-moz-placeholder {color: #000000;}
 * {
-    scrollbar-width: thin;
-    scrollbar-color: rgb(126, 126, 126) #f0f0f0;
-  }
-  *::-webkit-scrollbar {
-    width: 10px;
-  }
-  *::-webkit-scrollbar-track {
-    background:#f0f0f0;
-  }
-  *::-webkit-scrollbar-thumb {
-    background-color:#ccc;
-    border-radius: 20px;
-    border:none;
-  }
+  scrollbar-width: thin;
+  scrollbar-color: rgb(126, 126, 126) #f0f0f0;
+}
+*::-webkit-scrollbar {
+  width: 10px;
+}
+*::-webkit-scrollbar-track {
+  background:#f0f0f0;
+}
+*::-webkit-scrollbar-thumb {
+  background-color:#ccc;
+  border-radius: 20px;
+  border:none;
+}
 html {font-size:100%;-webkit-text-size-adjust:none;-ms-text-size-adjust:none}
 html body {font-size:15px;-webkit-animation: bugfix infinite 1s;overflow-x:hidden;line-height: 1.5;color: #191e22;background-color: #e9eef2;}
 h1, h2, h3, h4, h5, h6, h7 {color:#202222;margin:0px 0px 10px 0px;line-height:100%;font-size:18px;font-weight:300;}
@@ -61,7 +61,6 @@ div, span, a, header, footer, :before, :after, img, input, textarea, button, p, 
 .login {transition:none;-o-transition:none;-ms-transition:none;-moz-transition:none;-webkit-transition:none;}
 .clear {clear:both;}
 div:after {content: "";display: table;clear: both;}
-
 
 
 /*--*/
@@ -123,8 +122,6 @@ header {position:fixed;left:0;top:0;width:100%;z-index:998;background: #454a5e;}
 .moreoptions button {background:none;border:none;border-radius: 20px;font-size: 18px;line-height:100%;display: inline-block;text-align: center;vertical-align: middle;width:20px;height:20px;color:#999;margin: 0 3px;}
 .moreoptions button:hover {color:#c87359;}
 
-
-
 .teamitemplace {position:relative;width:49%;margin:1%;padding:1%;background:#fff;margin-bottom: 20px;box-shadow: 0 1px 4px 0 rgba(0,0,0,.1);}
 .teamitemplace h2 {font-weight:600;margin:3px 0 30px 0;text-transform:uppercase}
 .teamitemplace h3 {font-weight:500;}
@@ -154,8 +151,31 @@ div .card .btn {float: right;}
 div .card-body > div {padding: 5px 0;border-bottom:1px solid #e9ecef;}
 div .card-body > div .btn {line-height: 1;}
 
+.btnmore {display: inline-block;margin:0 0 20px 0;color: #ee7c66;border: none;color: #ee7c66;text-align: center;font-size: 14px;background: none;}
+.btnmore:hover, .btnmore:focus {color:#000;border: none;}
+.btnmore i {margin: 0 5px 0 0;}
 
+.btnsave {display: inline-block;margin: 5px 0;border: 1px solid #ee7c66;background: #ee7c66;color: #fff;text-align: center;padding: 10px 20px;border-radius: 5px;font-size: 16px;float: right;}
+.btnsave:hover, .btnsave:focus {background:#c87359;border:1px solid #c87359;}
+.btnsave i {margin: 0 5px 0 0;}
 
+.newjournal {position: relative;width: 100%;float: left;padding: 10px;border:1px solid #ccc ;margin: 0 0 20px 0;background: #e9ecef;}
+.newjournal input, .newjournal select, .newjournal textarea {border:1px solid #ccc;background: #fff;padding: 5px;width: 100%;}
+.newjournal label {width: 100%;display: block;margin: 0 0 10px 0;float: left;}
+.newjournal .title {width: 59%;}
+.newjournal .file {width: 39%;float: right;}
+.newjournal .file input {padding: 2px;}
+
+.addnewcriteria {padding: 15px 0 0 0;border-top:1px solid #e9ecef ;float: left;width: 100%;}
+.addnewcriteria label {float: left;width: 48%;}
+.addnewcriteria label:nth-of-type(2n) {float: right;}
+
+.editjournal {position: relative;width: 100%;float: left;margin: 0 0 20px 0;padding: 0 0 20px 0;border-bottom:1px solid #ccc;}
+.editjournal .btnplace {right: 5px;top:5px}
+.editjournal .abstract {overflow: hidden;position:relative;margin: 0 0 20px 0;}
+.editjournal .imgplace { overflow: hidden;float:left;   border-radius: 100%;background:#f0f0f0;color: #fff;width: 50px;height: 50px;display: inline-block;margin:0 3% 0 0;}
+
+.infocriteria {margin: 0 0 10px 0;padding: 0 0 10px 0;border-bottom:1px solid #e9ecef;}
 
 
 
@@ -170,6 +190,9 @@ div .card-body > div .btn {line-height: 1;}
 	.teamplace h2, .alertplace h2 {margin-bottom:10px;}
 	.teamlist .team, .alertplace .alertdata {margin:4%;}
 }
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
 
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';

@@ -87,11 +87,64 @@
 
   <div class="teamplace">
     <h2>Journal</h2>
-    <div class="list-group" style="max-height: 300px; overflow-y: auto;">
+    <div class="btnplace">
+      <button><i class="fas fa-folder-plus"></i>Add New</button>
+    </div>
+
+    <div class="newjournal">
+      <label for="" class="title"><input type="text" /></label>
+      <label  class="file"><input type="file"  /></label>
+      <label class="text"><textarea></textarea></label>
+
+      <div class="addnewcriteria">
+          <label class="selectcriteria"><select><option>Select criteria</option><option>1</option><option>1</option></select></label>
+          <label class="rangecriteria"><select><option>Range</option><option>1</option><option>1</option></select></label>
+      </div>
+      <button class="btnmore"><i class="far fa-plus-square"></i>Add more selects</button>
+      <button class="btnsave"><i class="fas fa-save"></i>Save</button>
+    </div>
+    
+    
+
+
+    <div class="editjournal">
+      <h3>Show Name of journal</h3>
+      <div class="btnplace">
+        <button><i class="fas fa-user-edit"></i>Edit</button>
+      </div>
+
+      <div class="abstract">
+      <div class="imgplace"><img src={{member.iconPath}} /></div>
+      Show Description Show Description Show Description Show Description Show Description Show Description
+      </div>
+
+      <div class="infocriteria">
+          <h4>Show Criteria</h4>
+          
+          <div>Show Range</div>
+      </div>
+
+      <div class="infocriteria">
+        <h4>Show Criteria</h4>
+
+        <div>Show Range</div>
+      </div>
+
+      <div class="infocriteria">
+          <h4>Show Criteria</h4>
+         
+          <div>Show Range</div>
+      </div>
+
+    </div>
+
+  </div>
+  
+  
+  
+  <div class="list-group" style="display: none;">
       <h4>Tasks / Offers</h4>
       <a (click)="openEntryDetails(task.id)" class="list-group-item list-group-item-action"
         *ngFor="let task of journalTasksList">{{task.title}} </a>
-    </div>
-    <hr />
-    <a (click)="openEntryDetails(0)" class="list-group-item list-group-item-action active">Custom entry</a>
-  </div>
+    <a (click)="openEntryDetails(0)" class="list-group-item list-group-item-action active">Custom entry</a> 
+   </div>
