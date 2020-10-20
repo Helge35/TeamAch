@@ -155,7 +155,7 @@ div .card-body > div .btn {line-height: 1;}
 .btnmore:hover, .btnmore:focus {color:#000;border: none;}
 .btnmore i {margin: 0 5px 0 0;}
 
-.btnsave {display: inline-block;margin: 5px 0;border: 1px solid #ee7c66;background: #ee7c66;color: #fff;text-align: center;padding: 10px 20px;border-radius: 5px;font-size: 16px;float: right;}
+.btnsave {display: inline-block;margin: 0px 0;border: 1px solid #ee7c66;background: #ee7c66;color: #fff;text-align: center;padding: 5px 20px;border-radius: 5px;font-size: 16px;float: right;}
 .btnsave:hover, .btnsave:focus {background:#c87359;border:1px solid #c87359;}
 .btnsave i {margin: 0 5px 0 0;}
 
@@ -166,7 +166,7 @@ div .card-body > div .btn {line-height: 1;}
 .newjournal .file {width: 39%;float: right;}
 .newjournal .file input {padding: 2px;}
 
-.addnewcriteria {padding: 15px 0 0 0;border-top:1px solid #e9ecef ;float: left;width: 100%;}
+.addnewcriteria {padding: 15px 0 0 0;border-top:1px solid #e9ecef ;}
 .addnewcriteria label {float: left;width: 48%;}
 .addnewcriteria label:nth-of-type(2n) {float: right;}
 
@@ -176,9 +176,10 @@ div .card-body > div .btn {line-height: 1;}
 .editjournal .imgplace { overflow: hidden;float:left;   border-radius: 100%;background:#f0f0f0;color: #fff;width: 50px;height: 50px;display: inline-block;margin:0 3% 0 0;}
 
 .infocriteria {margin: 0 0 10px 0;padding: 0 0 10px 0;border-bottom:1px solid #e9ecef;}
+.infocriteria span {display: inline-block;float: left;padding: 3px 0;}
+.infocriteria fieldset input {width: 20px;height: 20px;margin: 5px;}
 
-
-
+.or {margin: 0 0 10px 0;text-align: center;}
 
 @media screen and (max-width: 1020px)
 {

@@ -87,56 +87,96 @@
 
   <div class="teamplace">
     <h2>Journal</h2>
-    <div class="btnplace">
+    <div class="btnplace" style="display: none;">
       <button><i class="fas fa-folder-plus"></i>Add New</button>
     </div>
 
-    <div class="newjournal">
-      <label for="" class="title"><input type="text" /></label>
-      <label  class="file"><input type="file"  /></label>
-      <label class="text"><textarea></textarea></label>
 
-      <div class="addnewcriteria">
-          <label class="selectcriteria"><select><option>Select criteria</option><option>1</option><option>1</option></select></label>
-          <label class="rangecriteria"><select><option>Range</option><option>1</option><option>1</option></select></label>
-      </div>
-      <button class="btnmore"><i class="far fa-plus-square"></i>Add more selects</button>
-      <button class="btnsave"><i class="fas fa-save"></i>Save</button>
-    </div>
-    
-    
-
-
-    <div class="editjournal">
-      <h3>Show Name of journal</h3>
+  <div class="editjournal">
+      <h3>Show Name of Task</h3>
       <div class="btnplace">
         <button><i class="fas fa-user-edit"></i>Edit</button>
       </div>
 
       <div class="abstract">
-      <div class="imgplace"><img src={{member.iconPath}} /></div>
-      Show Description Show Description Show Description Show Description Show Description Show Description
+        <div class="imgplace"><img src={{member.iconPath}} /></div>
+        Show Description Show Description Show Description Show Description Show Description Show Description
       </div>
 
       <div class="infocriteria">
-          <h4>Show Criteria</h4>
-          
-          <div>Show Range</div>
+          <h4>Criteria Name 1</h4>
+          <label>
+            <span>Range:</span>
+            <fieldset id="Rangegroup1">
+              <input type="radio" value="value1" name="Rangegroup1">
+              <input type="radio" value="value2" name="Rangegroup1">
+              <input type="radio" value="value3" name="Rangegroup1">
+              <input type="radio" value="value4" name="Rangegroup1">
+              <input type="radio" value="value5" name="Rangegroup1">
+            </fieldset>
+          </label>
       </div>
 
       <div class="infocriteria">
-        <h4>Show Criteria</h4>
-
-        <div>Show Range</div>
+        <h4>Criteria Name 2</h4>
+        <label>
+          <span>Range:</span>
+          <fieldset id="Rangegroup2">
+            <input type="radio" value="value1" name="Rangegroup2">
+            <input type="radio" value="value2" name="Rangegroup2">
+            <input type="radio" value="value3" name="Rangegroup2">
+            <input type="radio" value="value4" name="Rangegroup2">
+            <input type="radio" value="value5" name="Rangegroup2">
+          </fieldset>
+        </label>
       </div>
 
       <div class="infocriteria">
-          <h4>Show Criteria</h4>
-         
-          <div>Show Range</div>
-      </div>
-
+        <h4>Criteria Name 3</h4>
+        <label>
+          <span>Range:</span>
+          <fieldset id="Rangegroup3">
+            <input type="radio" value="value1" name="Rangegroup3">
+            <input type="radio" value="value2" name="Rangegroup3">
+            <input type="radio" value="value3" name="Rangegroup3">
+            <input type="radio" value="value4" name="Rangegroup3">
+            <input type="radio" value="value5" name="Rangegroup3">
+          </fieldset>
+        </label>
     </div>
+
+    <button class="btnmore"><i class="far fa-plus-square"></i>Add more Criteria</button>
+
+    <div class="newjournal">
+      <div class="addnewcriteria">
+        <label for="" class="selectcriteria"><input type="text" placeholder="Create new criteria" /></label>
+        <label class="rangecriteria"><select><option>Type of Range 1</option><option>Type of Range 1</option><option>Type of Range 1</option></select></label>
+        <button class="btnsave"><i class="fas fa-save"></i>Place</button>
+      </div>
+    
+      <div class="or">Or Choose</div>
+
+      <div class="addnewcriteria">
+          <label class="selectcriteria"><select><option>Select criteria</option><option>1</option><option>1</option></select></label>
+          <label class="rangecriteria"><select><option>Type of Range 1</option><option>Type of Range 1</option><option>Type of Range 1</option></select></label>
+          <button class="btnsave"><i class="fas fa-save"></i>Place</button>
+      </div>
+
+      
+    </div>
+
+
+  </div>
+
+
+
+
+    
+    
+    
+
+
+    
 
   </div>
   
