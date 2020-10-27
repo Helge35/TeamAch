@@ -81,6 +81,9 @@ header {position:fixed;left:0;top:0;width:100%;z-index:998;background: #454a5e;}
 .teamplace {position:relative;width:49%;margin:1%;padding:1%;background:#fff;margin-bottom: 20px;box-shadow: 0 1px 4px 0 rgba(0,0,0,.1);}
 .teamplace h2, .alertplace h2 {font-weight:600;margin:0px 0 30px 0;text-transform:uppercase}
 .teamplace h3, .alertplace h3 {font-weight:500;}
+.teamplace .card {margin: 0 0 20px 0;}
+
+
 
 .teamlist .team {padding:0 0 20px 0;margin:0 0 20px 0;border-bottom: 1px solid #e9ecef;}
 .teamlist {  max-height:400px;overflow:hidden;-ms-touch-action: auto;touch-action: auto;overflow-y: auto;-ms-overflow-style: none;}
@@ -113,7 +116,7 @@ header {position:fixed;left:0;top:0;width:100%;z-index:998;background: #454a5e;}
 .alertlevel1 {background:#ffacac;padding:20px;}
 	
 .btnplace {position:absolute;right:15px;top:20px;}
-.btnplace button {display: inline-block;vertical-align: middle;color:#ee7c66;border:none;font-size:14px;margin: 0 10px;}
+.btnplace button {display: inline-block;vertical-align: middle;color:#ee7c66;border:none;font-size:14px;margin: 0 10px;background: none;}
 .btnplace button i {margin:0 5px 0 0}
 
 .btnplace button:hover {color: #000;}
@@ -151,11 +154,11 @@ div .card .btn {float: right;}
 div .card-body > div {padding: 5px 0;border-bottom:1px solid #e9ecef;}
 div .card-body > div .btn {line-height: 1;}
 
-.btnmore {display: inline-block;margin:0 0 20px 0;color: #ee7c66;border: none;color: #ee7c66;text-align: center;font-size: 14px;background: none;}
+.btnmore {display: inline-block;margin:20px 0 0 0;color: #ee7c66;border: none;color: #ee7c66;text-align: center;font-size: 14px;background: none;}
 .btnmore:hover, .btnmore:focus {color:#000;border: none;}
 .btnmore i {margin: 0 5px 0 0;}
 
-.btnsave {display: inline-block;margin: 0px 0;border: 1px solid #ee7c66;background: #ee7c66;color: #fff;text-align: center;padding: 5px 20px;border-radius: 5px;font-size: 16px;float: right;}
+.btnsave {display: inline-block;margin: 0px 0;border: 1px solid #ee7c66;background: #ee7c66;color: #fff;text-align: center;padding: 3px 15px;border-radius: 5px;font-size: 16px;float: right;}
 .btnsave:hover, .btnsave:focus {background:#c87359;border:1px solid #c87359;}
 .btnsave i {margin: 0 5px 0 0;}
 
@@ -167,17 +170,23 @@ div .card-body > div .btn {line-height: 1;}
 .newjournal .file input {padding: 2px;}
 
 .addnewcriteria {padding: 15px 0 0 0;border-top:1px solid #e9ecef ;}
-.addnewcriteria label {float: left;width: 48%;}
-.addnewcriteria label:nth-of-type(2n) {float: right;}
+.addnewcriteria label {float: left;width: 40%;}
+.addnewcriteria label:nth-of-type(2n) {margin: 0 10px;}
+.addnewcriteria button {width:15%;float: right;}
 
 .editjournal {position: relative;width: 100%;float: left;margin: 0 0 20px 0;padding: 0 0 20px 0;border-bottom:1px solid #ccc;}
 .editjournal .btnplace {right: 5px;top:5px}
 .editjournal .abstract {overflow: hidden;position:relative;margin: 0 0 20px 0;}
-.editjournal .imgplace { overflow: hidden;float:left;   border-radius: 100%;background:#f0f0f0;color: #fff;width: 50px;height: 50px;display: inline-block;margin:0 3% 0 0;}
+.editjournal .imgplace { overflow: hidden;float:left;   border-radius: 100%;background:#f0f0f0;color: #fff;width: 30px;height: 30px;display: inline-block;margin:0 3% 0 0;}
+.importantjournal h4 {font-weight: 600;}
+.alertjournal h4 {color: #ff0000;}
+.openedjournal .imgplace {width: 50px;height: 50px;}
 
-.infocriteria {margin: 0 0 10px 0;padding: 0 0 10px 0;border-bottom:1px solid #e9ecef;}
+.infocriteria {padding:5px 0;border-bottom:1px solid #ccc;}
 .infocriteria span {display: inline-block;float: left;padding: 3px 0;}
 .infocriteria fieldset input {width: 20px;height: 20px;margin: 5px;}
+.infocriteria h5 {float: left;width: 65%;margin: 0;    line-height: 140%;}
+.infocriteria label {float: right;width: 31%;margin: 0;}
 
 .or {margin: 0 0 10px 0;text-align: center;}
 
