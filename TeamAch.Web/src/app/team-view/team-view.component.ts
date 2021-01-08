@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { TeamService } from '../common/services/team.service';
 import { Member } from '../common/models/member';
 import { Message } from '../common/models/message';
 import { Project } from '../common/models/project';
+import { AddMemberComponent } from './add-member/add-member.component';
 
 
 @Component({
@@ -18,7 +19,12 @@ export class TeamViewComponent implements OnInit {
   messagesList: Message[];
   projectList: Project[];
 
-  constructor(private _teamService: TeamService) {
+
+  openNewMemberForm() {
+    const modalDetails = this.modalService.open(AddMemberComponent, { centered: true, scrollable: true });
+  }
+
+  constructor(private _teamService: TeamService, private modalService: NgbModal) {
   }
 
   ngOnInit(): void {
@@ -26,5 +32,8 @@ export class TeamViewComponent implements OnInit {
     this._teamService.getTeamAll().subscribe(t => this.team = t);
     this._teamService.getProjects().subscribe(p => this.projectList = p);
     this._teamService.getMessages().subscribe(r => this.messagesList = r);
+
+    //test
+    this.openNewMemberForm();
   }
 }

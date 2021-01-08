@@ -16,6 +16,7 @@ import { WorkerSkillComponent } from './worker-skill/worker-skill.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { ProjectDetailsComponent } from './projects/project-details/project-details.component';
 import { JournalEntryComponent } from './team-details/journal-entry/journal-entry.component';
+import { AddMemberComponent } from './team-view/add-member/add-member.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { JournalEntryComponent } from './team-details/journal-entry/journal-entr
     WorkerSkillComponent,
     ProjectsComponent,
     ProjectDetailsComponent,
-    JournalEntryComponent
+    JournalEntryComponent,
+    AddMemberComponent
   ],
   imports: [
     BrowserModule,

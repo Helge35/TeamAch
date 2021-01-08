@@ -7,7 +7,7 @@ export class Member{
     name : string;
     email: string;
     phone: string;
-    iconPath:string;
+    iconPath:string | ArrayBuffer | null;
     role:Role;
     birthday: Date;
     managerId: number;
