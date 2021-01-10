@@ -32,8 +32,5 @@ export class TeamViewComponent implements OnInit {
     this._teamService.getTeamAll().subscribe(t => this.team = t);
     this._teamService.getProjects().subscribe(p => this.projectList = p);
     this._teamService.getMessages().subscribe(r => this.messagesList = r);
-
-    //test
-    this.openNewMemberForm();
   }
 }

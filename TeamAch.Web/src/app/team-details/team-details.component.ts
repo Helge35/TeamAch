@@ -10,6 +10,7 @@ import { Absence } from '../common/models/absence';
 import { JournalEntryComponent } from './journal-entry/journal-entry.component';
 import { JournalEntry } from '../common/models/journal-entry';
 import { Criteria } from '../common/models/criteria';
+import { AddMemberComponent } from '../team-view/add-member/add-member.component';
 
 @Component({
   selector: 'app-team-details',
@@ -46,6 +47,11 @@ export class TeamDetailsComponent implements OnInit {
     const modalDetails = this.modalService.open(JournalEntryComponent, { centered: true, scrollable: true });
     modalDetails.componentInstance.entryId = id;
     modalDetails.componentInstance.criteriesList = this.criteriesList;
+  }
+
+  openNewMemberForm() {
+    const modalDetails = this.modalService.open(AddMemberComponent, { centered: true, scrollable: true });
+    modalDetails.componentInstance.member = this.member;
   }
 
   constructor(private route: ActivatedRoute, private teamService: TeamService, private modalService: NgbModal) { }
