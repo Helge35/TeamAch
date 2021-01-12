@@ -26,6 +26,15 @@ namespace TeamAch.Api
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(options =>
+            {
+                options.AddPolicy("EnableCORS", builder =>
+                {
+                    builder.AllowAnyOrigin()
+                    .AllowAnyHeader()
+                    .AllowAnyMethod();
+                });
+            });
 
             var connection = Configuration["ConnectionStrings:TeamAchConnectionString"];
             services.AddDbContext<TeamAchDbContext>(options => options.UseSqlServer(connection));
@@ -54,7 +63,6 @@ namespace TeamAch.Api
             services.AddSwaggerGen();
 
 
-
             services.AddScoped<LogInService>();
             services.AddScoped<LogInRepository>();
         }
@@ -62,6 +70,8 @@ namespace TeamAch.Api
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+
+
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
@@ -72,6 +82,8 @@ namespace TeamAch.Api
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseCors("EnableCORS");
 
             app.UseRouting();
 

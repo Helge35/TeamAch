@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TeamViewComponent } from './team-view/team-view.component';
 import { TeamService } from './common/services/team.service';
+import { LoginService } from './common/services/login.service';
 import { TeamDetailsComponent } from './team-details/team-details.component';
 import { MenuBarComponent } from './menu-bar/menu-bar.component';
 import { MatrixComponent } from './matrix/matrix.component';
@@ -17,6 +18,8 @@ import { ProjectsComponent } from './projects/projects.component';
 import { ProjectDetailsComponent } from './projects/project-details/project-details.component';
 import { JournalEntryComponent } from './team-details/journal-entry/journal-entry.component';
 import { AddMemberComponent } from './team-view/add-member/add-member.component';
+import { LoginComponent } from './login/login.component';
+import { GateComponent } from './gate/gate.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,9 @@ import { AddMemberComponent } from './team-view/add-member/add-member.component'
     ProjectsComponent,
     ProjectDetailsComponent,
     JournalEntryComponent,
-    AddMemberComponent
+    AddMemberComponent,
+    LoginComponent,
+    GateComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +45,7 @@ import { AddMemberComponent } from './team-view/add-member/add-member.component'
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [TeamService],
+  providers: [TeamService, LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
