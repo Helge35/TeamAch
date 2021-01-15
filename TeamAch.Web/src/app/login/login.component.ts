@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
-import { format } from 'path';
 import { LoginService } from '../common/services/login.service';
 
 @Component({
@@ -19,17 +18,21 @@ export class LoginComponent implements OnInit {
     }
     this.service.login(credentials).subscribe(response => {
       const token = (<any>response).token;
-      localStorage.setItem('jwtTeamAchToken', token);
+      localStorage.setItem(this.service.tokenName, token);
       this.invalidLogin = false;
-      this.router.navigate["/"];
+      this.router.navigate(["/team"]);
     },
-    err=>{
-      this.invalidLogin = true;
-    });
+      err => {
+        this.invalidLogin = true;
+      });
   }
+
 
   constructor(private router: Router, private service: LoginService) { }
   ngOnInit(): void {
+    if (this.service.isUserAuthenticaded()) {
+      this.router.navigate(['/team']);
+    }
   }
 
 }

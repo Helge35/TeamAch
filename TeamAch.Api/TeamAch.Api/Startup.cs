@@ -52,8 +52,8 @@ namespace TeamAch.Api
                     ValidateLifetime = true,
                     ValidateIssuerSigningKey = true,
 
-                    ValidIssuer = "http://localhost:5001",
-                    ValidAudience = "http://localhost:5001",
+                    //ValidIssuer = "http://localhost:64714",
+                    //ValidAudience = "http://localhost:64714",
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration.GetSection("AppSettings:Secret").Value))
                 };
             });
@@ -62,8 +62,7 @@ namespace TeamAch.Api
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddSwaggerGen();
 
-
-            services.AddScoped<LogInService>();
+            services.AddScoped<TeamRepository>();
             services.AddScoped<LogInRepository>();
         }
 

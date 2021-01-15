@@ -7,17 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GateComponent implements OnInit {
 
-isUserAuthenticaded(){
-  const token: string = localStorage.getItem("jwtTeamAchToken");
-  if(token){
-    return true;
-  }
-  else{
-    return false;
-  }
-}
-
-
   constructor() { }
 
   ngOnInit(): void {

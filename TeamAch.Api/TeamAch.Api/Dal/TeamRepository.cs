@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,11 @@ namespace TeamAch.Api.Dal
     {
         public TeamRepository(TeamAchDbContext dbContect, IMapper mapper) : base(dbContect, mapper)
         { }
+
+        public Member GetMember(int id)
+        {
+            return DbContext.Members.FirstOrDefault(x => x.Id == id);
+        }
 
         public IEnumerable<Member> GetTeamsByManager(int id)
         {

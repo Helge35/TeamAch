@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginService } from '../common/services/login.service';
 
 @Component({
   selector: 'menu-bar',
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu-bar.component.scss']
 })
 export class MenuBarComponent implements OnInit {
+  isUserAuthenticaded:boolean = false;
 
-  constructor() { }
+  logout() {
+    this.logInService.logout();
+  }
+
+  constructor(private logInService: LoginService) { }
 
   ngOnInit(): void {
+    this.isUserAuthenticaded = this.logInService.isUserAuthenticaded();
   }
 
 }

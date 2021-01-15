@@ -10,6 +10,8 @@ using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using TeamAch.Api.Dal;
+using TeamAch.Api.Dal.EF;
 using TeamAch.Api.Models;
 
 namespace TeamAch.Api.Controllers
@@ -19,25 +21,38 @@ namespace TeamAch.Api.Controllers
     public class AuthController : ControllerBase
     {
         SigningCredentials _signingCredentials;
-        public AuthController(IConfiguration configuration)
+        LogInRepository _logInRepository;
+        TeamRepository _teamRepository;
+        public AuthController(IConfiguration configuration, LogInRepository logInRepository, TeamRepository teamRepository)
         {
+            _logInRepository = logInRepository;
+
             var sectretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration.GetSection("AppSettings:Secret").Value));
-            _signingCredentials = new SigningCredentials(sectretKey, SecurityAlgorithms.HmacSha256);
+            _signingCredentials = new SigningCredentials(sectretKey, SecurityAlgorithms.HmacSha256Signature);
         }
 
         [HttpPost, Route("login")]
-        public IActionResult Login([FromBody] LoginModel user)
+        public IActionResult Login([FromBody] LoginModel userModel)
         {
-            if (user == null)
+            if (!ModelState.IsValid || userModel == null)
                 return BadRequest("Invalid Client");
 
-            if (user.Username == "1" && user.Password == "1")
+            var user = _logInRepository.GetUser(userModel.Username);
+
+            if (user != null && PasswordHasher.VerifyHashedPassword(user.Password , userModel.Password))
             {
+              var member =  _teamRepository.GetMember(user.Id);
+
+                var claimsList = new List<Claim>
+                {
+                    new Claim(ClaimTypes.Name, user.Username),
+                    new Claim(ClaimTypes.GivenName, member.Name),
+                };
                 var tokenOptions = new JwtSecurityToken(
-                    issuer: "http://localhost:5001",
-                    audience: "http://localhost:5001",
-                    claims: new List<Claim>(),
-                    expires: DateTime.Now.AddMinutes(15),
+                    //issuer: "http://localhost:64714",
+                    //audience: "http://localhost:64714",
+                    claims: claimsList,
+                    expires: DateTime.Now.AddHours(1),
                     signingCredentials: _signingCredentials
                     );
 
