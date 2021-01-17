@@ -7,7 +7,8 @@ import { LoginService } from '../common/services/login.service';
   styleUrls: ['./menu-bar.component.scss']
 })
 export class MenuBarComponent implements OnInit {
-  isUserAuthenticaded:boolean = false;
+  isUserAuthenticaded: boolean = false;
+  userName: string;
 
   logout() {
     this.logInService.logout();
@@ -16,7 +17,22 @@ export class MenuBarComponent implements OnInit {
   constructor(private logInService: LoginService) { }
 
   ngOnInit(): void {
+    this.logInService.onUserLogin.subscribe(u => {
+      if(u){
+        this.isUserAuthenticaded = true;
+        return this.userName = u.name;
+      }else{
+        this.isUserAuthenticaded = false;
+        return this.userName ='';
+      }
+    
+    });
+
     this.isUserAuthenticaded = this.logInService.isUserAuthenticaded();
+
+    if (this.isUserAuthenticaded) {
+      this.logInService.parseExistedTokenData();
+    }
   }
 
 }

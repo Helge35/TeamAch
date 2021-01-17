@@ -1,15 +1,11 @@
-﻿
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
 using System.Security.Claims;
 using System.Text;
-using System.Threading.Tasks;
 using TeamAch.Api.Dal;
 using TeamAch.Api.Dal.EF;
 using TeamAch.Api.Models;
@@ -26,6 +22,7 @@ namespace TeamAch.Api.Controllers
         public AuthController(IConfiguration configuration, LogInRepository logInRepository, TeamRepository teamRepository)
         {
             _logInRepository = logInRepository;
+            _teamRepository = teamRepository;
 
             var sectretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration.GetSection("AppSettings:Secret").Value));
             _signingCredentials = new SigningCredentials(sectretKey, SecurityAlgorithms.HmacSha256Signature);
@@ -39,12 +36,15 @@ namespace TeamAch.Api.Controllers
 
             var user = _logInRepository.GetUser(userModel.Username);
 
-            if (user != null && PasswordHasher.VerifyHashedPassword(user.Password , userModel.Password))
+            if (user != null && PasswordHasher.VerifyHashedPassword(user.Password, userModel.Password))
             {
-              var member =  _teamRepository.GetMember(user.Id);
+                var member = _teamRepository.GetMember(user.Id);
+                if (member == null)
+                    return NotFound();
 
                 var claimsList = new List<Claim>
                 {
+                    new Claim(ClaimTypes.SerialNumber, user.Id.ToString()),
                     new Claim(ClaimTypes.Name, user.Username),
                     new Claim(ClaimTypes.GivenName, member.Name),
                 };

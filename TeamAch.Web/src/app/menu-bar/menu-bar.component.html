@@ -1,6 +1,6 @@
 <h1 style="display: none;"> Team-Achievement</h1>
 
-<button *ngIf='isUserAuthenticaded' (click)='logout()' style="margin-left: 350px; width: 50px;"><i class="fas" ></i>Log Out</button>
+<button *ngIf='isUserAuthenticaded' (click)='logout()' style="margin-left: 350px; width: 50px;"><i class="fas" ></i>{{userName}}(Log Out)</button>
 <nav class="mainmenu">
  
   <button [routerLink]="['/matrix']" class="navbar-toggler nav-btn" type="button">

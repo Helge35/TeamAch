@@ -13,6 +13,7 @@ namespace TeamAch.Api.Dal.EF.Entities
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
+        public int UserId { get; set; }
         public int ManagerId { get; set; }
         [Required]
         public string Name { get; set; }

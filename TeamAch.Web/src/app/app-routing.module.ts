@@ -15,7 +15,7 @@ import { AuthGuard } from './common/guards/auth-guard';
 const routes: Routes = [
   { path: "", component: GateComponent },
   { path: "home", component: GateComponent },
-  { path: "team", component: TeamViewComponent, canActivate:[AuthGuard] },
+  { path: "team", component: TeamViewComponent/*, canActivate:[AuthGuard] */},
   { path: "details", component: TeamDetailsComponent },
   { path: "details/:id", component: TeamDetailsComponent },
   { path: "matrix", component: MatrixComponent },

@@ -16,7 +16,7 @@ namespace TeamAch.Api.Dal
 
         public Member GetMember(int id)
         {
-            return DbContext.Members.FirstOrDefault(x => x.Id == id);
+            return DbContext.Members.FirstOrDefault(x => x.UserId == id);
         }
 
         public IEnumerable<Member> GetTeamsByManager(int id)

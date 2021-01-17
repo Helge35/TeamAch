@@ -11,7 +11,6 @@ using System;
 using System.Text;
 using TeamAch.Api.Dal;
 using TeamAch.Api.Dal.EF;
-using TeamAch.Api.Services;
 
 namespace TeamAch.Api
 {
