@@ -13,6 +13,7 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class AddMemberComponent implements OnInit {
 
+  isNewMember: boolean;
   member: Member = new Member();
   form = this.formBuilder.group({
     "name": new FormControl("", Validators.required),
@@ -34,7 +35,10 @@ export class AddMemberComponent implements OnInit {
   }
 
   onSubmit() {
-    this.router.navigate(['details', { id: this.member.name }]);
+    if(this.isNewMember){
+      this.router.navigate(['details', { id: this.member.id }]);
+    }
+
     this.activeModal.close();
   }
 

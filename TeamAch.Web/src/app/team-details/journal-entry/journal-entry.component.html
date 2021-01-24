@@ -1,67 +1,52 @@
-<div style="height: 600px;">
-  <div class="modal-header">
-    <h4 class="modal-title"> <input class="form-control" type="text" [(ngModel)]="entry.title"
-        placeholder="Entry Title"></h4>
-    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <div class="modal-body" style="height: 400px;">
-    <div class="form-group row">
-      <label class="col-3 col-form-label">Description:</label>
-      <div class="col-8">
-        <textarea class="form-control" type="text" [(ngModel)]="entry.description"
-          placeholder="Entry Description"></textarea>
-      </div>
+<div class="newjournal">
+
+  <div class="editjournal openedjournal">
+    <div class="imgplace">
+      <i class="fas fa-bolt"></i>
     </div>
-    <div class="row">
+    <h4>{{entry.title}}</h4>
+    <div class="btnplace">
 
-      <div class="col-5">
-        <div class="list-group" style="max-height: 250px; overflow-y: auto;">
-          <h4>Crtiterias</h4>
-          <a class="list-group-item list-group-item-action" *ngFor="let cr of entry.criteries" (click)="setSelected(cr.id)" 
-          [style.background-color]= "cr.id == selectedCriteriyaId  ? 'purple': 'turquoise'"
-          >{{cr.name}} - {{cr.rate}} </a>
-        </div>
-      </div>
-      <div class="col-2">
-        <button type="button" class="btn btn-primary" style="margin-top: 100px;" (click)="addCritetiya(true)">
-          <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-left-short" fill="currentColor"
-            xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd"
-              d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z" />
-          </svg></button>
-      </div>
-      <div class="col-5">
-        <div class="list-group">
-          <h4>Bank/All</h4>
-          <div style="max-height: 250px; overflow-y: auto;" >
-            <a class="list-group-item list-group-item-action selected" *ngFor="let cr of criteriesList" (click)="setSelected(cr.id)" 
-            [style.background-color]= "cr.id == selectedCriteriyaId  ? 'purple': 'turquoise'">{{cr.name}} </a>
-          </div>
-        </div>
+      <button><i class="fas fa-trash-alt"></i>Remove</button>
+    </div>
 
-      </div>
+
+    <div class="abstract">Description Description Description Description Description </div>
+
+
+    <div class="infocriteria" *ngFor='let creteria of entry.criteries'>
+      <h5>{{creteria.name}}</h5>
+      <label>
+        <span>Range:</span>
+        <fieldset>
+          <input *ngFor='let indx of [1,2 ,3,4,5]' type="radio" value="indx" title={{indx}} name="{{creteria.id}}"
+            [checked]="creteria.rate === indx" (change)="onSelectionChange(creteria, indx)">
+        </fieldset>
+      </label>
+    </div>
+
+    <button class="btnmore" (click)='addNewCreteriaToList()'><i class="far fa-plus-square"></i>Add more
+      Criteria</button>
+
+    <div class="infocriteria">
+      <label>
+        <span>Range:</span>
+        <fieldset>
+          <input *ngFor='let indx of [1,2 ,3,4,5]' type="radio" value="indx" title={{indx}} name="NewCriteriaGroup"
+            (change)="newCriteriaRate = indx;">
+        </fieldset>
+      </label>
+      <label class="selectcriteria">
+        <select [(ngModel)]="newCriteriyaId">
+          <option selected>Select criteria</option>
+          <option [value]="c.id" *ngFor='let c of criteriesList'>{{c.name}}</option>
+        </select>
+      </label>
+
+
 
     </div>
-  </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-primary" (click)="activeModal.close('Close click')">Save</button>
-    <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
-  </div>
 
-</div>
-
-  <div  style=" position: absolute;
-  left: 60px;
-  top: 250px;
-  z-index: 1000; background-color: brown; height: 50px;width:400px ;" [style.visibility]="showSelectedCreteria ? 'visible' : 'hidden'">
-  
-  {{selectedCriteriya.name}} - Rate: 
-  <select [(ngModel)]="selectedCriteriya.rate" >
-    <option *ngFor="let r of [1,2,3,4,5]" [ngValue]="r">{{r}}</option>
-  </select>
-  <button type="button" class="close" aria-label="Close" (click)="addCritetiya(false)">
-    <span aria-hidden="true">&times;</span>
-  </button>
+  </div>
+  <button class="btnsave"><i class="fas fa-save"></i>Place</button>
 </div>

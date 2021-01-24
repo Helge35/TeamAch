@@ -52,7 +52,7 @@ namespace TeamAch.Api.Controllers
                     //issuer: "http://localhost:64714",
                     //audience: "http://localhost:64714",
                     claims: claimsList,
-                    expires: DateTime.Now.AddHours(1),
+                    expires: DateTime.Now.AddYears(1),
                     signingCredentials: _signingCredentials
                     );
 

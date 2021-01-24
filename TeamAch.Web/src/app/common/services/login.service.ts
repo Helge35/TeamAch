@@ -56,7 +56,11 @@ export class LoginService {
   }
 
   isUserAuthenticaded() {
-    const token: string = localStorage.getItem(this.tokenName);
+    let token: string = localStorage.getItem(this.tokenName);
+
+    if(!environment.production){
+      token= "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3NlcmlhbG51bWJlciI6IjEiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiMSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2dpdmVubmFtZSI6Ik9sZWciLCJleHAiOjE2NDI5MjczMTl9.zoGwQvh26aigb3ZdoRhG_BTwXtaxLCTsAEHyVp42ZUQ";
+    }
     if (token && !this.jwtHelper.isTokenExpired(token)) {
       return true;
     }

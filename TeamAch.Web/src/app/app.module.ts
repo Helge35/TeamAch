@@ -21,6 +21,9 @@ import { JournalEntryComponent } from './team-details/journal-entry/journal-entr
 import { AddMemberComponent } from './team-view/add-member/add-member.component';
 import { LoginComponent } from './login/login.component';
 import { GateComponent } from './gate/gate.component';
+import { TeamDetailsGeneralComponent } from './team-details/team-details-general/team-details-general.component';
+import { TeamDetailsJournalComponent } from './team-details/team-details-journal/team-details-journal.component';
+import { AuthGuard } from './common/guards/auth-guard';
 
 
 export function tokenGetter(){
@@ -40,7 +43,9 @@ export function tokenGetter(){
     JournalEntryComponent,
     AddMemberComponent,
     LoginComponent,
-    GateComponent
+    GateComponent,
+    TeamDetailsGeneralComponent,
+    TeamDetailsJournalComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +63,7 @@ export function tokenGetter(){
       }
     })
   ],
-  providers: [TeamService, LoginService],
+  providers: [TeamService, LoginService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

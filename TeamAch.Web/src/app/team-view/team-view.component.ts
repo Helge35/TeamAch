@@ -22,6 +22,7 @@ export class TeamViewComponent implements OnInit {
 
   openNewMemberForm() {
     const modalDetails = this.modalService.open(AddMemberComponent, { centered: true, scrollable: true });
+    modalDetails.componentInstance.isNewMember = true;
   }
 
   constructor(private _teamService: TeamService, private modalService: NgbModal) {

@@ -18,14 +18,13 @@ export class MenuBarComponent implements OnInit {
 
   ngOnInit(): void {
     this.logInService.onUserLogin.subscribe(u => {
-      if(u){
+      if (u) {
         this.isUserAuthenticaded = true;
-        return this.userName = u.name;
-      }else{
+        this.userName = u.name;
+      } else {
         this.isUserAuthenticaded = false;
-        return this.userName ='';
+        this.userName = '';
       }
-    
     });
 
     this.isUserAuthenticaded = this.logInService.isUserAuthenticaded();

@@ -15,11 +15,11 @@ import { AuthGuard } from './common/guards/auth-guard';
 const routes: Routes = [
   { path: "", component: GateComponent },
   { path: "home", component: GateComponent },
-  { path: "team", component: TeamViewComponent/*, canActivate:[AuthGuard] */},
-  { path: "details", component: TeamDetailsComponent },
-  { path: "details/:id", component: TeamDetailsComponent },
-  { path: "matrix", component: MatrixComponent },
-  { path: "projects", component: ProjectsComponent },
+  { path: "team", component: TeamViewComponent, canActivate:[AuthGuard] },
+  { path: "details", component: TeamDetailsComponent, canActivate:[AuthGuard] },
+  { path: "details/:id", component: TeamDetailsComponent , canActivate:[AuthGuard]},
+  { path: "matrix", component: MatrixComponent , canActivate:[AuthGuard]},
+  { path: "projects", component: ProjectsComponent , canActivate:[AuthGuard]},
 ];
 
 @NgModule({

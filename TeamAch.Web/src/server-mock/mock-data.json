@@ -110,8 +110,13 @@
   },
 
   "journalEntries" : [
-    {"id": 1,  "taskId":"#5", "memberId":1, "title":"Create Logo", "description":"", "criteries": [{"id": 5, "name":"Criteria 5","rate": 8}, {"id": 9, "name":"Criteria 9", "rate": 6}]},
-    {"id": 2,  "taskId":"#67", "memberId":1, "title":"Second Offer", "description":"", "criteries": [{"id": 2, "name":"Criteria 2","rate": 6}, {"id": 4, "name":"Criteria 4","rate": 9}]}
+    {"id": 1,  "taskId":"#5", "memberId":1, "title":"Create Logo", "description":"", "criteries": [{"id": 5, "name":"Criteria 5","rate": 3}, {"id": 9, "name":"Criteria 9", "rate": 5}]},
+    {"id": 2,  "taskId":"#67", "memberId":1, "title":"Second Offer", "description":"", "criteries": [{"id": 2, "name":"Criteria 2","rate": 6}, {"id": 4, "name":"Criteria 4","rate": 9}]},
+    {"id": 3,  "taskId":"73", "memberId":1, "title":"J 1  Mock", "description":"", "criteries": []},
+    {"id": 4,  "taskId":"74", "memberId":1, "title":"J 2 Mock", "description":"", "criteries": []},
+    {"id": 5,  "taskId":"75", "memberId":1, "title":"J 3 Mock", "description":"", "criteries": []},
+    {"id": 6,  "taskId":"77", "memberId":1, "title":"J 4 Mock", "description":"", "criteries": []},
+    {"id": 7,  "taskId":"78", "memberId":1, "title":"J 5 Mock", "description":"", "criteries": []}
   ],
   "criteries": [
     {"id": 1, "name":"Criteria 1", "rate": 5},
